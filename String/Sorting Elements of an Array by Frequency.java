@@ -1,3 +1,5 @@
+
+// using Arraylist with objects in hashmap 
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -46,7 +48,7 @@ class GFG {
 	}
 }
 
-
+// using treemap and treeset as value in hashmap
 ***********************************************************************
 import java.util.*;
 import java.lang.*;
@@ -54,9 +56,7 @@ import java.io.*;
 
 class GFG {
     public static void main (String[] args) {
-		//code
-	    
-	    Scanner s=new Scanner(System.in);
+	Scanner s=new Scanner(System.in);
 	    int t=s.nextInt();
 	    while(t>0){
 	        int n=s.nextInt();
