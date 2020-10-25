@@ -1,4 +1,55 @@
+// easy way 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
 
+import java.util.HashMap; 
+import java.util.Map; 
+import java.util.Map.Entry;
+
+class GFG {
+	public static void main (String[] args) {
+			Scanner in=new Scanner(System.in);
+		int t=in.nextInt();
+		for(int i=0;i<t;i++)
+		{
+		    int n1=in.nextInt();
+		    int []a= new int[n1];
+		    int l;
+		    for( l=0;l<n1;l++)
+		        a[l]=in.nextInt();
+		    TreeMap<Integer,Integer> map=new TreeMap();
+		    for( l=0;l<n1;l++)
+		    if(!map.containsKey(a[l]))
+		        map.put(a[l],1);
+		    else
+		        map.put(a[l],map.get(a[l])+1);
+		    while(n1!=0)
+		    {
+		       
+		    int max_count = 0, res = -1; 
+          
+            for(Entry<Integer, Integer> val : map.entrySet()) 
+             { 
+                  if (max_count < val.getValue()) 
+                { 
+                res = val.getKey(); 
+                max_count = val.getValue();
+                
+                } 
+             } 
+            for(int k=0;k<max_count;k++)
+                    System.out.print(res+" ");
+            n1=n1-1;
+            map.remove(res);
+		    }
+		
+                System.out.println("");
+		    }
+	}
+}
+
+**********************************************************************************8
 // using Arraylist with objects in hashmap 
 import java.util.*;
 import java.lang.*;
