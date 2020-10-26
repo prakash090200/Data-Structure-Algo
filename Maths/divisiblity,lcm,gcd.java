@@ -50,6 +50,53 @@ sum=(firstnum + lastnum)*count/2; (sum in AP when first and last term in known)
 https://www.geeksforgeeks.org/count-n-digit-numbers-divisible-by-given-number/
 https://leetcode.com/problems/largest-divisible-subset/
 
+******************************************************************
+//lcm and gcd of 2 number, gcd=hcf
+/*
+class Main{
+    public static void main(String args[]){
+        StringBuffer sb=new StringBuffer();
+       int n=6;
+       lsm(n);
+    }
+    public static void lsm(int n){
+        int ans=1;
+        for(int i=1;i<=n;i++){
+            ans=(ans*i)/gcd(ans,i);
+        }
+        System.out.println(ans);
+    }
+    public static int gcd(int a,int b){
+        if(a==0)
+            return b;
+        return gcd(b%a,a);
+    }
+
+ }
+***********************************************************************
+/// Divisibility  rule of 11.
+class Main{
+    public static void main(String[] args) throws IOException{
+        BufferedReader bf=new BufferedReader(new InputStreamReader(System.in));
+        int n=Integer.parseInt(bf.readLine());
+       String s=Integer.toString(n);
+       int c1=0;
+       int c2=0;
+       for(int i=0;i<s.length();i++) {
+           int c = (int) (s.charAt(i) - '0');
+           if(i%2==0)
+           c1+=c;
+           else
+           c2+=c;
+      
+       }
+        c1=Math.abs(c1-c2);
+        if(c1%11==0)
+            System.out.println(11);
+      else
+            System.out.println(12);
+    }
+ }
 
 
 
