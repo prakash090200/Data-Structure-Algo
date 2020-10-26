@@ -2,11 +2,11 @@
 https://www.youtube.com/watch?v=BssszjSmcoA
    unit digit of any number multiply with X and add in reminig part and divide it and check.
     a) 7 --> unit digit *5
-    b) 13--> unit digit*4
-    c) 17--> unit digit*12
-    d) 19--> unit digit*2
-    e) 23--> unit digit*7
-    f) 29--> unit digit*3
+    b) 13--> unit digit *4
+    c) 17--> unit digit *12
+    d) 19--> unit digit *2
+    e) 23--> unit digit *7
+    f) 29--> unit digit *3
     g) 11-->https://www.youtube.com/watch?v=xKZGqkwmv1I
           (diff of sum of alternative no must be 0, 11 or multiple of 11).
 
