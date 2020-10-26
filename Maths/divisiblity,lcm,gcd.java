@@ -2,11 +2,11 @@
 https://www.youtube.com/watch?v=BssszjSmcoA
    unit digit of any number multiply with X and add in reminig part and divide it and check.
     a) 7 --> unit digit *5
-    b) 13--> unit digit*4
-    c) 17--> unit digit*12
-    d) 19--> unit digit*2
-    e) 23--> unit digit*7
-    f) 29--> unit digit*3
+    b) 13--> unit digit *4
+    c) 17--> unit digit *12
+    d) 19--> unit digit *2
+    e) 23--> unit digit *7
+    f) 29--> unit digit *3
     g) 11-->https://www.youtube.com/watch?v=xKZGqkwmv1I
           (diff of sum of alternative no must be 0, 11 or multiple of 11).
 
@@ -17,12 +17,14 @@ a) arrange it in decending order and checkif 0 is present in array or not.
 b) find sum %3, compute remainder and REMOVE element matched with remainder 
 c) in no element found which is same as remainder( remainder=N-remainder).
 d) count<=N-1 ( remove element matched with new remainder).
+
 ***********************************************************************
 3) LCM, GCD OF A NUMBER USING Euclidean algo:
        gcd*lcm=a*b
        -> lcm=(a*b)/lcm;
 https://www.geeksforgeeks.org/program-to-find-lcm-of-two-numbers/
 *************************************************************************
+
 4) Smallest n digit number divisible by given three numbers:
 https://www.geeksforgeeks.org/smallest-n-digit-number-divisible-by-given-three-numbers/
 
