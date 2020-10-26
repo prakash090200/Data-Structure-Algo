@@ -97,6 +97,24 @@ class Main{
             System.out.println(12);
     }
  }
+*****************************************************************
+// Divisiblity rule of 7,13,17,19,23,29.
+ class Main {
+     public static void main(String[] args) {
+      Scanner s =new Scanner (System.in);
+      int n=s.nextInt();
+         int a=0,b=0;
+         while(n>100){
+             a=n%10;
+             n=(n/10)+(a*7);
+         }
+         if(n%23==0)
+             System.out.println(23);
+         else
+             System.out.println(24);
+     }
+ }
+************************************************************
 
 
 
