@@ -1,6 +1,6 @@
 /*package whatever //do not write package name here */
 
-// insertion or deletion to make a palindrome(dp)(lsc)
+// insertion or deletion to make a palindrome(dp) (lsc)
 
 import java.util.*;
 import java.lang.*;
@@ -33,6 +33,6 @@ class GFG {
 	            dp[i][j]=Math.max(dp[i-1][j],dp[i][j-1]);
 	        }
 	    }
-	    System.out.println(s1.length()-dp[n][n]);
+	    System.out.println(s1.length()-dp[n][n]);   // string length- lcs
 	}
 }
