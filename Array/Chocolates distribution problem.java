@@ -31,5 +31,5 @@ class GFG {
 		    System.out.println(min);
 		   
 		}
-		}
+	}
 }
