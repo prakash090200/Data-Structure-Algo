@@ -15,10 +15,9 @@ class GFG {
 		    int [] a=new int[n];
 		    for(int i=0;i<n;i++)
 		    a[i]=sc.nextInt();
-		    Arrays.sort(a);
+		    Arrays.sort(a); //  sorting and finding the range which can be used for distribution with min diff.
 		 
 		    int min=Integer.MAX_VALUE;
-		   
 		    int stu=sc.nextInt();
 		    if(n==stu){
 		        min=a[n-1]-a[0];
