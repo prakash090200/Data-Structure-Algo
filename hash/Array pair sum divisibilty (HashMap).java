@@ -1,7 +1,7 @@
 import java.lang.*;
 import java.io.*;
 
-
+ /////Array Pair Sum Divisibility Problem 
 
 class GFG {
 	public static void main (String[] args) {
