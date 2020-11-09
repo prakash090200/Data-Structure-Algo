@@ -1,6 +1,5 @@
 
 
-/////Find all pairs with a given sum
 
 import java.util.*;
 import java.lang.*;
@@ -62,6 +61,46 @@ public class GfG {
 		}
 	}
 }
+
+*************************************************************
+class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            int n1 = sc.nextInt();
+            int n2 = sc.nextInt();
+            int x = sc.nextInt();
+            int a1[] = new int[n1];
+            ArrayList<Integer> a2 = new ArrayList<>();
+            for (int i = 0; i < n1; i++)
+                a1[i] = sc.nextInt();
+
+            for (int i = 0; i < n2; i++)
+                a2.add(sc.nextInt());
+
+            LinkedList<ArrayList<Integer>> l = new LinkedList<>();
+            ArrayList<Integer> aa;
+            for (int i = 0; i < n1; i++) {
+                if (a2.contains(x - a1[i])) {
+                    aa = new ArrayList<>();
+                    aa.add(a1[i]);
+                    aa.add(x - a1[i]);
+                    l.add(aa);
+                    a2.remove(a2.indexOf(x - a1[i]));
+                }
+            }
+
+            for (int i = 0; i < l.size() - 1; i++)
+                System.out.print(l.get(i).get(0) + " " + l.get(i).get(1) + "," + " ");
+System.out.println(l.get(l.size()-1).get(0)+" "+l.get(l.size()-1).get(1));
+
+        }
+    }
+}
+
+*******************************************************************
 
 
 
