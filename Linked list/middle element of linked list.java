@@ -10,7 +10,7 @@ class Solution
             one=one.next.next;
             two=two.next;
         }
-        if(one.next!=null)  
+        if(one.next!=null)  //// in case of even no of element this action will be performed 
         two=two.next;
         return two.data;
     }
