@@ -17,3 +17,25 @@ class Solution {
      
     }
 }
+
+**************************
+
+// Detect Loop in linked list
+
+class Solution {
+    public static boolean detectLoop(Node head){
+        boolean val=false;
+       Node fir=head;
+        HashMap<Node,Integer> h=new HashMap<>();
+        while(fir!=null){
+            if(h.get(fir.next)!=null){
+                val=true;
+                break;
+            }
+            h.put(fir,fir.data);
+            fir=fir.next;
+        }
+        return val;
+     
+    }
+}
