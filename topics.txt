@@ -17,3 +17,5 @@ Dynamic Programming
 Divide and Conquer
 Backtracking
 Bit Magic
+
+*********
