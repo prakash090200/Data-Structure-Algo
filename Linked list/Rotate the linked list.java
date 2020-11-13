@@ -1,5 +1,5 @@
 
-// rotate the linked list
+/// rotate the linked list
 class Rotate{
     
     public Node rotate(Node head, int k) {
