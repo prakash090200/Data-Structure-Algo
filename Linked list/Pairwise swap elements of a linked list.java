@@ -1,5 +1,5 @@
 
-///Pairwise swap elements of a linked list 
+////Pairwise swap elements of a linked list 
 
 class Solution {
     
@@ -19,6 +19,6 @@ class Solution {
     head.next=(curr!=null)?pairwiseSwap(nex):null;
     return prev;
         
-    }
+     }
     
 }
