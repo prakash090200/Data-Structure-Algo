@@ -1,3 +1,5 @@
+///Longest Common Prefix in an Array of String
+
 import java.util.*;
 import java.lang.*;
 import java.io.*;
