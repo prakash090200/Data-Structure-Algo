@@ -1,5 +1,5 @@
-/*package whatever //do not write package name here */
-//Permutations of a given string
+
+////Permutations of a given string
 
 import java.util.*;
 import java.lang.*;

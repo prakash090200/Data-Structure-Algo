@@ -1,5 +1,6 @@
 //// Maximum of all subarrays of size k (Hashmap)
 
+
 //// Count distinct elements in every window (hashmap)
 **************************************************************
 

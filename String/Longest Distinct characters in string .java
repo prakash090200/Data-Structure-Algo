@@ -1,3 +1,6 @@
+//Longest Common Prefix in an Array of String
+
+
 class Main {
     public static int solve(String s, int n){
         int max=Integer.MIN_VALUE;
