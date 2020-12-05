@@ -1,4 +1,4 @@
-/*package whatever //do not write package name here */
+
 //Subarray with given sum
 import java.util.*;
 import java.lang.*;
@@ -29,7 +29,7 @@ class GFG {
 		        }
 		        
 		        else if(temp==0){
-		      //System.out.println(a[j]+"hey");
+		      
 		            start=i+1;
 		            end=j;
 		            break label;

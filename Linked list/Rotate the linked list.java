@@ -14,6 +14,7 @@ class Rotate{
        
        while(newhead.next!=null)
        newhead=newhead.next;
+
        newhead.next=head;
        prev.next=null;
        return temp;

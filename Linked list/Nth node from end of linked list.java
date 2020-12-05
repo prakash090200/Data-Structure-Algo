@@ -8,7 +8,7 @@ class GfG
        Node h=reverse(head);
        int count=0;
        Node temp=null;
-       while(h!=null && countn){
+       while(h!=null && count < n){
            temp=h;
           count++;
           h=h.next;
