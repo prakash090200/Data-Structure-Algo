@@ -5,7 +5,7 @@
 class Solution {
     public String reverseWords(String s) {
        if (s.isEmpty()) {
-            return s;
+            return s; 
         }
 	
         StringBuilder sb = new StringBuilder();
