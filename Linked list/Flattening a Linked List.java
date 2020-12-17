@@ -8,7 +8,7 @@ class GfG
                  return a.data-b.data;
              }
             
-        });
+   });
         
     Node temp=root;
     Node innerll=null;
@@ -19,7 +19,9 @@ class GfG
             innerll=innerll.bottom;
         }
         temp=temp.next;
-    }
+   }
+
+
 Node head=null;
 Node tail=null;
 while(!pq.isEmpty()){
