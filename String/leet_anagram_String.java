@@ -8,7 +8,7 @@ static boolean isAnagram(String c, String d)
     
     for(int i = 0; i < c.length(); i++)
     {
-        count = count + c.charAt(i);
+        count = count + c.charAt(i); 
     }
  
   
