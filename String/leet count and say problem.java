@@ -44,29 +44,34 @@ class Solution {
 
 
 ***************************
+
+--> best time complexity (1st one more better)
+
+
 class Solution {
     public String countAndSay(int n) {
         if(n==1) return "1";
         if(n==2) return "11";
         String s="11";
         for(int j=3;j<=n;j++){
-            String temp="";
+            StringBuilder temp=new StringBuilder();
             s+='$';
             int count=1;
             for(int i=1;i<s.length();i++){
                 if(s.charAt(i)!=s.charAt(i-1)){
-                    temp+=Integer.toString(count);
-                    temp+=s.charAt(i-1);
+                    temp.append(count).append(s.charAt(i-1));
                     count=1;
                 }
                 else
                     count++;
             }
-            s=temp;
+            s=temp.toString();
         }
         
         return s;
-        
+    }
+}
+   
         
     }
 }
