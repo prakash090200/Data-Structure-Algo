@@ -6,7 +6,7 @@ class Solution {
        char []c=s.toCharArray();
         int start=0;
         int end=c.length-1;
-        while(startend){
+        while(start< end){
             if(vowel(c[start]) && vowel(c[end])){
                 char temp=c[start];
                 c[start++]=c[end];
