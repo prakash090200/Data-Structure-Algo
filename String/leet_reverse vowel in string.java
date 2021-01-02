@@ -25,7 +25,7 @@ class Solution {
     }
     public boolean vowel(char c){
         c=Character.toLowerCase(c);
-          return (c=='a' c=='e' c=='i' c=='o' c=='u' );
+          return (c=='a' || c=='e' || c=='i' || c=='o' || c=='u' );
              
         
     }
