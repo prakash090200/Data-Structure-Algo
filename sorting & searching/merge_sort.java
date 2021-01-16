@@ -15,7 +15,7 @@ class Solution {
         
     }
 
-/*imp*/************************************************************
+/*imp*/*************************************************************
    public void merge(int arr[], int l, int m, int r)
     {
         // Find sizes of two subarrays to be merged
