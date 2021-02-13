@@ -7,20 +7,21 @@ class Solution {
             return false;
         int l1 = s1.length();
         int count[] = new int[26];
+        int j=0;
+        for(j=0;j<l1;j++)
+            count[s1.charAt(j)-'a']++;
         for(int i=0;i<l1;i++)
-            count[s1.charAt(i)-'a']++;
-        for(int i=0;i<l1;i++){
             count[s2.charAt(i)-'a']--;
-        }
+        
         if(check(count))
             return true;
-        int i=0;
-        while(i+l1<s2.length()){
+       for(int i=0;i<s2.length()-l1;i++){
             count[s2.charAt(i)-'a']++;
-            count[s2.charAt(i+l1)-'a']--;
-            i++;
+            count[s2.charAt(j++)-'a']--;
+           
             if(check(count))
                 return true;
+        
         }
         return false;
     }
@@ -32,4 +33,4 @@ class Solution {
         return true;
     }
     
- }
+} 

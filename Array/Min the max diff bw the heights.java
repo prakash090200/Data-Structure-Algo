@@ -5,20 +5,19 @@ static int getMinDiff(int arr[], int n, int k)
         if (n == 1) 
         return 0; 
   
-        // Sort all elements 
+       
         Arrays.sort(arr); 
   
-        // Initialize result 
+        
         int ans = arr[n-1] - arr[0]; 
   
-        // Handle corner elements 
         int small = arr[0] + k; 
         int big = arr[n-1] - k; 
-        int temp = 0; 
+    
           
         if (small > big) 
         { 
-            temp = small; 
+            int temp = small; 
             small = big; 
             big = temp; 
         } 
@@ -29,8 +28,6 @@ static int getMinDiff(int arr[], int n, int k)
             int subtract = arr[i] - k; 
             int add = arr[i] + k; 
   
-            // If both subtraction and addition 
-            // do not change diff 
             if (subtract >= small || add <= big) 
                 continue; 
   
