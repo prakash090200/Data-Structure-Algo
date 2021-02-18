@@ -20,3 +20,22 @@ class Solution {
         return maxvalue;
     }
 }
+
+
+OR
+
+class Solution {
+    public int maxProfit(int[] prices) {
+     if(prices.length<1) return 0;
+        int min=Integer.MIN_VALUE;
+        int maxvalue=0;
+        
+        for(int i=0;i<prices.length;i++){
+        min=Math.max(min,-prices[i]);
+            maxvalue=Math.max(maxvalue,min+prices[i]);
+            
+        
+        }
+        return maxvalue;
+    }
+}

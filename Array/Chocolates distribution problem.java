@@ -1,6 +1,7 @@
 /*package whatever //do not write package name here */
 
 // Chocolate Distribution Problem
+// sliding window
 
 import java.util.*;
 import java.lang.*;
@@ -15,20 +16,17 @@ class GFG {
 		    int [] a=new int[n];
 		    for(int i=0;i<n;i++)
 		    a[i]=sc.nextInt();
-		    Arrays.sort(a); ////  sorting and finding the range which can be used for distribution with min diff.
+		    Arrays.sort(a); 
 		 
 		    int min=Integer.MAX_VALUE;
-		    int stu=sc.nextInt();
-		    if(n==stu)
-		       min=a[n-1]-a[0];
+		    int k=sc.nextInt();
+		   
 		    
-		    else
-		    {
-		    for(int i=0;i<=n-stu;i++)
-		        min=Math.min(min,a[i+(stu-1)]-a[i]);
+		    for(int i=0;i<=n-k;i++)
+		        res=Math.min(res,a[i+k-1]-a[i]);
 		       
 		    }
-		    System.out.println(min);
+		    System.out.println(res);
 		   
 		}
 	}
