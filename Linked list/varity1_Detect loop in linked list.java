@@ -5,10 +5,12 @@ class Solution {
      Node first=head;
      Node second=head;
      boolean val=false;
-     while(first!=null && first.next!=null){
+     while(first!=null && first.next!=null && first.next.next!=null){
          first=first.next.next;
          second=second.next;
-         if(first==second){      //// Additional part rest same as middle element of linked list
+
+//// if at any point first and second are at same point means their is a loop
+         if(first==second){      
            val=true;
            break;
          }
