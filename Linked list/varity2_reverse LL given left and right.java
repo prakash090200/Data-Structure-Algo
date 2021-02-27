@@ -23,21 +23,18 @@ class Solution {
     }
     
     public ListNode reverseLinkList(ListNode head,int n){
-        if(head == null)
-            return null;
         
+        n=n+1;
         ListNode prev=null,next=null;
         ListNode current = head;
         
         int count = 0;
-        while(current != null){
+        while(count++<n && current != null){
             next = current.next;
             current.next = prev;
             prev = current;
             current = next;
-            if(count == n)
-                break;
-            count++;
+           
         }
         head.next = current;
         return prev;

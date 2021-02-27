@@ -16,7 +16,7 @@ class GfG
             prev=curr;
             curr=nex;
         }
-        node.next=(curr!=null)?reverse(nex,k):null;
+        node.next=(curr!=null)?reverse(curr,k):null;
         return prev;
     }
 }
