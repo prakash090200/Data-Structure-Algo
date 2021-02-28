@@ -32,29 +32,7 @@ class Solution {
 }
 **********************************************************
 
-class Solution {
-    public int[] intersection(int[] nums1, int[] nums2) {
-        HashMap<Integer,Integer> h=new HashMap<>();
-      ArrayList<Integer> ar=new ArrayList<>();
-       
-        int k=0;
-        for(int val:nums1){
-            if(h.containsKey(val))
-                 h.put(val,h.get(val)+1);
-            else
-                h.put(val,1);
-        }
-        for(int val:nums2){
-            if(h.containsKey(val))
-              ar.add(val);
-            h.remove(val);
-        }
-        int[] a=new int[ar.size()];
-        for(int i=0;i<ar.size();i++)
-            a[k++]=ar.get(i);
-        return a;
-    }
-}
+
 
 
                             OR
