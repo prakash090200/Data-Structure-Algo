@@ -13,21 +13,18 @@ class GFG {
 		int t=sc.nextInt();
 		while(t-- >0){
 		    int n=sc.nextInt();
-		    int [] a=new int[n];
+		    int []arr=new int[n];
 		    for(int i=0;i<n;i++)
-		    a[i]=sc.nextInt();
-		    Arrays.sort(a); 
-		 
-		    int min=Integer.MAX_VALUE;
+		    arr[i]=sc.nextInt();
 		    int k=sc.nextInt();
-		   
-		    
-		    for(int i=0;i<=n-k;i++)
-		        res=Math.min(res,a[i+k-1]-a[i]);
-		       
+		    Arrays.sort(arr);
+		    int res=Integer.MAX_VALUE;
+		 
+		    for(int i=0;i<=(n-k);i++){
+		        res=Math.min(res,arr[i+k-1]-arr[i]);
+		        
 		    }
 		    System.out.println(res);
-		   
 		}
 	}
 }

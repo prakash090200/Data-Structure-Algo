@@ -45,7 +45,7 @@ class GFG {
 		        }
 		        else{
 		            res+=r1;
-		            i++;
+		            
 		        }
 		        
 		    }
