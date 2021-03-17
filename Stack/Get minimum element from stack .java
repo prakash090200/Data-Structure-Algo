@@ -2,12 +2,14 @@
 
 // push => 2*(incoming ele)-MinElemengt;
 //pop=> 2*(minelement)-stack.peek();
+
+
 class GfG
 {
     int minEle;
     Stack<Integer> s=new Stack<>();
 
-    /*returns min element from stack*/
+ 
     int getMin()
     {
 	if(s.isEmpty())
