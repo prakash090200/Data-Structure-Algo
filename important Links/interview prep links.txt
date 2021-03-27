@@ -1,0 +1,17 @@
+java oops:
+
+https://www.geeksforgeeks.org/commonly-asked-java-programming-interview-questions-set-1/
+
+https://www.geeksforgeeks.org/commonly-asked-java-programming-interview-questions-set-2/
+
+____________________________________
+Multithreading:
+
+https://www.javatpoint.com/java-multithreading-interview-questions
+
+
+_____________________________________
+
+Operating System
+
+https://najishukri.files.wordpress.com/2011/01/questions-answers.pdf

@@ -1,7 +1,6 @@
 https://leetcode.com/problems/reverse-nodes-in-k-group/submissions/
 
-25. Reverse Nodes in k-Group (note not to reverse element with count less than k)
-
+25.Reverse Nodes in k-Group (note not to reverse element with count less than k)
 
 
 class Solution {

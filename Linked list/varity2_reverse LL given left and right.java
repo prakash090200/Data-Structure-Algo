@@ -25,7 +25,8 @@ class Solution {
     public ListNode reverseLinkList(ListNode head,int n){
         
         n=n+1;
-        ListNode prev=null,next=null;
+        ListNode prev=null,
+        next=null;
         ListNode current = head;
         
         int count = 0;

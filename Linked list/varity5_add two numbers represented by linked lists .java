@@ -9,7 +9,8 @@ class Solution {
     if(l1==null && l2==null){
         if(carry==0) 
             return null;
-        new ListNode(carry);
+         else
+        return  new ListNode(carry);
     }
     int res=0;
     if(l1!=null){

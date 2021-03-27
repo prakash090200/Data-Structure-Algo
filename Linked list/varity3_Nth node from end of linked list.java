@@ -7,10 +7,7 @@ class GfG
     {
     	if(head==null) return -1;
         Node cur=head;
-        int n=0;
-        Node temp1=null;
-        int temp2=0;
-        int count=0;
+      int count=0;
         while(cur!=null){
             count++;
             if(count==k)
