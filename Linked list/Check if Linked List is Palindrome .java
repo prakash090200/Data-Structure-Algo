@@ -28,19 +28,22 @@ class Palindrome
     
     boolean isPalindrome(Node head) 
     {
+
+ if(head!=null && head.next==null)
+            return true;
        boolean flag=true;;
        Node fir=head;
        Node sec=head;
-       Node temp=null;
+      
        while(fir.next!=null && fir.next.next!=null){
            fir=fir.next.next;
-           temp=sec;
+          
            sec=sec.next;
        }
       if(fir!=null)
       sec=sec.next;
       Node head2=reverse(sec);
-      while(head!=sec.next && head2!=null){
+      while(head!=sec && head2!=null){
           if(head.data==head2.data){
               head=head.next;
               head2=head2.next;

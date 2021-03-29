@@ -1,5 +1,26 @@
+https://leetcode.com/problems/intersection-of-two-linked-lists/submissions/
+
 ////Intersection Point in Y Shapped Linked Lists 
 
+
+//best**
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode temp1=headA,temp2=headB;
+        while(temp1!=null||temp2!=null){
+            if(temp1==temp2){
+                return temp1;
+            }
+            temp1=temp1==null?headB:temp1.next;
+            temp2=temp2==null?headA:temp2.next;
+        }
+        return null;
+        
+        
+    }
+}
+
+****************************************************
 class Intersect
 {
 	int intersectPoint(Node headA, Node headB)

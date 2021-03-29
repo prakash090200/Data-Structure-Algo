@@ -15,3 +15,15 @@ _____________________________________
 Operating System
 
 https://najishukri.files.wordpress.com/2011/01/questions-answers.pdf
+
+______________________________________
+
+DBMS
+
+https://www.javatpoint.com/dbms-interview-questions
+
+______________________________________
+
+Software engineering
+
+https://www.guru99.com/software-engineering-interview-questions.html
