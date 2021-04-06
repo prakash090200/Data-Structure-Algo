@@ -1,34 +1,32 @@
-//Longest Common Prefix in an Array of String
+https://leetcode.com/problems/longest-common-prefix/submissions
+
+//  Longest Common Prefix
 
 
-class Main {
-    public static int solve(String s, int n){
-        int max=Integer.MIN_VALUE;
-        int count;
-        for(int i=0;i<n;i++){
-            HashSet<Character> h=new HashSet<>();
-            int j=i;
-            count=0;
-            while(j<n && !h.contains(s.charAt(j))){
-                h.add(s.charAt(j));
-                count++;
+class Solution {
+public String longestCommonPrefix(String[] strs) {
+if (strs == null || strs.length == 0) 
+return "";
 
-                max=Math.max(max,count);
-                j++;
+String prefix = "";
+    //ci=char_index
+    //si=str_index
+for (int ci = 0; ci < strs[0].length(); ci++) {
+char c = strs[0].charAt(ci);
+for (int si = 1; si < strs.length; si++) {
+    
+if (ci >= strs[si].length()) 
+return prefix;
 
-            }
-
-        }
-        return max;
-    }
-    public static void main (String[] args) {
-        Scanner sc=new Scanner(System.in);
-
-        int t=sc.nextInt();
-        String ss=sc.next();
-        while(t-- >0){
-            int count=solve(ss,ss.length());
-            System.out.println(count);
-        }
-    }
+if (c != strs[si].charAt(ci)) 
+return prefix;
+        
+}
+  
+    
+    
+prefix = strs[0].substring(0, ci + 1);
+}
+return prefix;
+}
 }
