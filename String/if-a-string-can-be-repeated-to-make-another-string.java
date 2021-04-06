@@ -1,4 +1,4 @@
-httpswww.geeksforgeeks.orgcheck-if-a-string-can-be-repeated-to-make-another-string
+https://www.geeksforgeeks.org/check-if-a-string-can-be-made-equal-to-another-string-by-swapping-or-replacement-of-characters/
 
 
 class GfG 

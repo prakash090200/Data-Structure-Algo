@@ -1,3 +1,6 @@
+https://leetcode.com/problems/sort-characters-by-frequency/submissions/
+
+
 /////sort-characters-by-frequency
 
 class Solution {
@@ -7,17 +10,17 @@ class Solution {
         for(int value: s.toCharArray()) count[value]++;
         
         StringBuilder sb = new StringBuilder();
-        for(int i = 0; i < count.length; i++){
-            int max = findMax(count); //call the method that finds where the max index is
+        for(int i = 0; i <s.length(); i++){
+            int max = findMax(count); 
             if(count[max] == 0) break; 
-            while(count[max] > 0){  //decrement the count char by char
+            while(count[max] > 0){  
                 sb.append((char)(max));
                 count[max]--;
             }
         }
         return sb.toString();
     }
-    //find where the max index is
+   
     public int findMax(int[] arr){
         int max = 0;
         int index = 0;

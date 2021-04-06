@@ -1,4 +1,6 @@
-//// longest-common-prefix/submissions
+https://leetcode.com/problems/longest-common-prefix/submissions
+
+//  Longest Common Prefix
 
 
 class Solution {
@@ -7,19 +9,23 @@ if (strs == null || strs.length == 0)
 return "";
 
 String prefix = "";
-for (int char_index = 0; char_index < strs[0].length(); char_index++) {
-char c = strs[0].charAt(char_index);
-for (int strs_index = 1; strs_index < strs.length; strs_index++) {
+    //ci=char_index
+    //si=str_index
+for (int ci = 0; ci < strs[0].length(); ci++) {
+char c = strs[0].charAt(ci);
+for (int si = 1; si < strs.length; si++) {
     
-if (char_index >= strs[strs_index].length()) 
+if (ci >= strs[si].length()) 
 return prefix;
 
-if (c != strs[strs_index].charAt(char_index)) 
+if (c != strs[si].charAt(ci)) 
 return prefix;
         
 }
+  
     
-prefix = strs[0].substring(0, char_index + 1);
+    
+prefix = strs[0].substring(0, ci + 1);
 }
 return prefix;
 }
