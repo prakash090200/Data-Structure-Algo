@@ -1,4 +1,7 @@
-///// permutation-in-string leet
+https://leetcode.com/problems/permutation-in-string/
+
+///// permutation of string in another string
+
 
 
 class Solution {

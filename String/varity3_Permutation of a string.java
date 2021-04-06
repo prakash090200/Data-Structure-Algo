@@ -1,5 +1,6 @@
+https://practice.geeksforgeeks.org/problems/permutations-of-a-given-string2041/1
 
-////Permutations of a given string
+////All possible Permutations of a given string 
 
 import java.util.*;
 import java.lang.*;
