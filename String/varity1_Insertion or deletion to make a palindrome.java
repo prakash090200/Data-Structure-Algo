@@ -1,22 +1,13 @@
-
+https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/
 
 //// insertion or deletion to make a palindrome(dp) (lsc)
 
 import java.util.*;
-import java.lang.*;
-import java.io.*;
-
-class GFG {
-	public static void main (String[] args) {
-		Scanner sc=new Scanner(System.in);
-		int t=sc.nextInt();
-		while(t-- >0){
-		    String s1=sc.next();
-		    solve(s1,new StringBuffer(s1).reverse().toString(),s1.length());
-		    
-		}
-	}
-	public static void  solve(String s1,String s2,int n){
+class Solution {
+    public int minInsertions(String s1) {
+        return solve(s1,new StringBuffer(s1).reverse().toString(),s1.length());
+    }
+    public static int  solve(String s1,String s2,int n){
 	    //int n=s1.length();
 	    int [][]dp=new int[n+1][n+1];
 	    for(int i=0;i<=n;i++)
@@ -33,6 +24,6 @@ class GFG {
 	            dp[i][j]=Math.max(dp[i-1][j],dp[i][j-1]);
 	        }
 	    }
-	    System.out.println(s1.length()-dp[n][n]);   // string length - (lcs)
+	    return (s1.length()-dp[n][n]);   // string length - (lcs)
 	}
 }

@@ -1,3 +1,7 @@
+https://leetcode.com/problems/valid-palindrome-ii/
+
+// palindrome with max i delition
+
 class Solution {
    public static boolean validPalindrome(String s, int low, int high, int deleted) {
 	while (high > low && deleted < 2) {
