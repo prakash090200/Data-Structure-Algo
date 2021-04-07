@@ -16,6 +16,7 @@ class Solution {
             count[c-'a']--;
             
             if(!status[c-'a']){
+                //lc=last char
                  char lc=sb.charAt(sb.length()-1);
                     while(c<lc && count[lc-'a']>0){
                     sb.deleteCharAt(sb.length()-1);
