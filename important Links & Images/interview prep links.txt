@@ -4,6 +4,8 @@ https://www.geeksforgeeks.org/commonly-asked-java-programming-interview-question
 
 https://www.geeksforgeeks.org/commonly-asked-java-programming-interview-questions-set-2/
 
+https://www.edureka.co/blog/interview-questions/oops-interview-questions/
+
 ____________________________________
 Multithreading:
 
