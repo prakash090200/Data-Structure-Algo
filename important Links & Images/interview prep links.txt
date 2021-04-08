@@ -7,7 +7,7 @@ https://www.geeksforgeeks.org/commonly-asked-java-programming-interview-question
 https://www.edureka.co/blog/interview-questions/oops-interview-questions/
 
 ____________________________________
-Multithreading:
+Multithreading:     
 
 https://www.javatpoint.com/java-multithreading-interview-questions
 
