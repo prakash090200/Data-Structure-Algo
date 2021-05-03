@@ -1,6 +1,7 @@
 https://leetcode.com/problems/maximal-rectangle/submissions/
 
-////85. Maximal Rectangle
+////85. Maximal Rectangle in a binary matrix
+
 
 class Solution {
     public int maximalRectangle(char[][] matrix) {
