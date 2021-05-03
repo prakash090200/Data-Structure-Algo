@@ -33,23 +33,20 @@ public static int[] calculateSpan(int price[], int n)
     {
         int [] ans=new int[n];
         Stack<int[]> s=new Stack<>();
-        ans[0]=-1;
+        ans[0]=1;
         s.push(new int[]{price[0],0});
         
         for(int i=1;i<n;i++){
             while(!s.isEmpty() && s.peek()[0]<=price[i])
             s.pop();
-            ans[i]=(s.isEmpty())?-1:s.peek()[1];
+            ans[i]=(s.isEmpty())?i+1:i-s.peek()[1];
             s.push(new int[]{price[i],i});
         }
-        for(int i=0;i<n;i++){
-            ans[i]=i-ans[i];
-        }
+       
         return ans;
     }
     
 }
-
 *****************************************************************
 
 https://leetcode.com/problems/online-stock-span/
