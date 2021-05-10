@@ -1,14 +1,17 @@
+https://leetcode.com/problems/maximum-depth-of-binary-tree/submissions/
+
+
 ///Height of Binary Tree 
 
 class Solution {
-    int height(Node node) {
-        Node temp=node;
+    public int maxDepth(TreeNode root) {
+        TreeNode temp=root;
 
-        if(node==null)
+        if(root==null)
         return 0;
 
-        int lheight=height(temp.left);
-        int rheight=height(temp.right);
+        int lheight=maxDepth(temp.left);
+        int rheight=maxDepth(temp.right);
 
         if(lheight>rheight)
         return lheight+1;
