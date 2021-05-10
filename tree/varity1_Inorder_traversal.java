@@ -1,6 +1,10 @@
 
 https://leetcode.com/problems/binary-tree-inorder-traversal/submissions/
 
+
+TIME  :  O(n)
+SPACE :  O(n)
+
 class Solution {
     
     public List<Integer> inorderTraversal(TreeNode root) {

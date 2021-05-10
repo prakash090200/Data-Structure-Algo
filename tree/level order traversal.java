@@ -1,7 +1,33 @@
 https://leetcode.com/problems/binary-tree-level-order-traversal/
 
+// BEST**
 
-// long approach
+class Solution {
+    List<List<Integer>> retVal = new ArrayList<List<Integer>>();
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        levelOrderAux(root,0);
+        return retVal;
+        
+    }
+	
+    public void levelOrderAux(TreeNode root, int level){
+        if(root==null) return; 
+        if(retVal.size()==level){ 
+            retVal.add(new ArrayList<Integer>());
+        }
+        retVal.get(level).add(root.val); 
+        levelOrderAux(root.left,level+1);
+        levelOrderAux(root.right,level+1);
+        return;
+    }
+}
+
+*************************************************************
+
+// long approach but imp for interview
+
+Time->O(n^2)
+Space -> O(n)
 
 class Solution {
     
@@ -59,3 +85,33 @@ class answer{
 }
 
 ****************************************************
+/// ITERATIVE METHOD USING QUEUE
+
+Time->O(n)
+Space -> O(n)
+
+
+class BinaryTree { 
+Node root;
+void printLevelOrder()
+    {
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.add(root);
+        while (!queue.isEmpty())
+        {
+ 
+           
+            Node tempNode = queue.poll();
+            System.out.print(tempNode.data + " ");
+ 
+
+            if (tempNode.left != null) {
+                queue.add(tempNode.left);
+            }
+
+            if (tempNode.right != null) {
+                queue.add(tempNode.right);
+            }
+        }
+    }
+

@@ -1,6 +1,9 @@
 
 https://leetcode.com/problems/binary-tree-postorder-traversal/submissions/
 
+TIME  :  O(n)
+SPACE :  O(n)
+
 class Solution {
     public List<Integer> postorderTraversal(TreeNode root) {
     List<Integer> ll=new ArrayList<>();

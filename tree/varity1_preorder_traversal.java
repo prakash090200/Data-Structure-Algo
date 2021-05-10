@@ -1,5 +1,8 @@
 https://leetcode.com/problems/binary-tree-preorder-traversal/submissions/
 
+TIME  :  O(n)
+SPACE :  O(n)
+
 
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
