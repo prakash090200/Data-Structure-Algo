@@ -13,9 +13,6 @@ class Solution {
         int lheight=maxDepth(temp.left);
         int rheight=maxDepth(temp.right);
 
-        if(lheight>rheight)
-        return lheight+1;
-        else
-        return rheight+1;
+        return (Math.max(lheight, rheight) + 1);
     }
 }

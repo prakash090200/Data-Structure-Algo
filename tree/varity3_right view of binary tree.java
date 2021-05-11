@@ -1,7 +1,10 @@
 https://leetcode.com/problems/binary-tree-right-side-view/
 
-
 // Binary Tree Right Side View
+
+
+TIME:  O(N)
+SPACE: O(N)
 
 class Solution {
     List<Integer> ans = new ArrayList<Integer>();

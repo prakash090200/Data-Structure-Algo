@@ -1,5 +1,7 @@
 ///Left View of Binary Tree 
 
+TIME:  O(N)
+SPACE: O(N)
 
 BEST**
 
