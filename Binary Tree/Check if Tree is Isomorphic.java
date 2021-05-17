@@ -2,6 +2,8 @@ https://practice.geeksforgeeks.org/problems/check-if-tree-is-isomorphic/1
 
 ///Check if Tree is Isomorphic
 
+TIME:  O(min(m,n))
+
 
 class Solution  
 { 

@@ -28,6 +28,9 @@ class Solution {
 ITERATIVE APPROACH******
  // Iterative function to perform inorder traversal on the tree
 
+TIME  :  O(n)
+SPACE :  O(n)
+
 class Main
 {
    
@@ -82,5 +85,56 @@ class Main
         root.right.left.right = new Node(8);
  
         inorderIterative(root);
+    }
+}
+********************************************************************
+
+TIME  :  O(n)
+SPACE :  O(1) *****
+
+//MORRIS INORDER TRAVERSAL ALGO space: O(1) **
+
+class Solution
+{
+    ArrayList<Integer> a=new ArrayList<>();
+    ArrayList<Integer> inOrder(Node root)
+    {
+        Node current, pre;
+ 
+        if (root == null)
+            return a;
+ 
+        current = root;
+        while (current != null)
+        {
+            if (current.left == null)
+            {
+                a.add(current.data);
+                current = current.right;
+            }
+            else {
+                
+                pre = current.left;
+                while (pre.right != null
+                       && pre.right != current)
+                    pre = pre.right;
+ 
+          
+                if (pre.right == null) {
+                    pre.right = current;
+                    current = current.left;
+                }
+ 
+                
+                else
+                {
+                    pre.right = null;
+                    a.add(current.data);
+                    current = current.right;
+                } 
+ 
+            } 
+        }
+        return a;
     }
 }
