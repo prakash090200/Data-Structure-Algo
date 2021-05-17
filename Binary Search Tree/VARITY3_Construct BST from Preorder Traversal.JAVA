@@ -32,21 +32,22 @@ TIME:O(N)
 SPACE:O(N)
 
 class Solution {
+    int c=0;
     public TreeNode bstFromPreorder(int[] pre) {
-        return bst(pre,Integer.MIN_VALUE,Integer.MAX_VALUE,new int[1]);
+        return bst(pre,Integer.MIN_VALUE,Integer.MAX_VALUE);
     }
     
-    private TreeNode bst(int[] pre,int min,int max,int[] c) {
-        if(c[0]>=pre.length) {
+    private TreeNode bst(int[] pre,int min,int max) {
+        if(c==pre.length) {
             return null;
         }
         TreeNode node=null;
-        int key=pre[c[0]];
+        int key=pre[c];
         if(key>min && key<max){   
             node = new TreeNode(key);
-            c[0]+=1;
-            node.left=bst(pre,min,key,c);                 
-            node.right=bst(pre,key,max,c); 
+            c++;
+            node.left=bst(pre,min,key);                 
+            node.right=bst(pre,key,max); 
             
         }
         return node;
