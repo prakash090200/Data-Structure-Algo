@@ -2,7 +2,8 @@ https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 
 // Kth Smallest Element in a BST
 
-
+TIME:O(N)
+SPACE: O(N)
 
 
 class Solution {
@@ -23,5 +24,56 @@ class Solution {
             out.add(root.val);
             inorderTraversalWithK(root.right, out, k);
         }
+    }
+}
+***********************************************************************
+// MORRIS INORDER TRAVERSAL APPROACH **
+
+TIME:O(N)
+SPACE: O(1)  ****
+
+class Solution {
+    public int kthSmallest(TreeNode root, int k) {
+       
+        int ksmall=0;
+        int count=0;
+        TreeNode pre;
+ 
+        TreeNode current = root;
+        while (current != null)
+        {
+            if (current.left == null)
+            {
+                count++;
+                if(count==k)
+                    ksmall=current.val;
+                current = current.right;
+            }
+            else {
+                
+                pre = current.left;
+                while (pre.right != null
+                       && pre.right != current)
+                    pre = pre.right;
+ 
+          
+                if (pre.right == null) {
+                    pre.right = current;
+                    current = current.left;
+                }
+ 
+                
+                else
+                {
+                    pre.right = null;
+                    count++;
+                   if(count==k)
+                    ksmall=current.val;
+                    current = current.right;
+                } 
+ 
+            } 
+        }
+        return ksmall;
     }
 }
