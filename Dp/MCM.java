@@ -1,26 +1,63 @@
+https://www.geeksforgeeks.org/matrix-chain-multiplication-dp-8/
+
+
 //MCM with memoization
-/*class Main{
-    public static int solve(int [] arr, int i,int j){
-        int [][] t=new int[i+1][j+1];
-        for(int k=0;k<=i;k++){
-            for(int h=j;h<=j;h++){
-                t[k][h]=-1;
-            }
-        }
-        int min=Integer.MAX_VALUE;
-            if(i>=j)
-                return 0;
-            if(t[i][j]!=-1)
-                return t[i][j];
-            for(int k=i;k<j;k++){
-            int temp_ans=solve(arr,i,k)+solve(arr,k+1,j)+(arr[i-1]*arr[k]*arr[j]);
-            if(temp_ans<min)
-                min=temp_ans;
-        }
-        return t[i][j]=min;
+
+
+class GFG
+{
+ 
+  static int[][] dp = new int[100][100];
+  static int matrixChainMemoised(int[] p, int i, int j)
+  {
+    if (i == j) 
+    {
+      return 0;
     }
-    public static void main(String [] args){
-        int [] arr={10,20,30,40,30};
-        System.out.println(solve(arr,1,arr.length-1));
+    if (dp[i][j] != -1) 
+    {
+      return dp[i][j];
     }
+    dp[i][j] = Integer.MAX_VALUE;
+    for (int k = i; k < j; k++) 
+    {
+      dp[i][j] = Math.min(
+        dp[i][j], matrixChainMemoised(p, i, k)
+        + matrixChainMemoised(p, k + 1, j)
+        + p[i - 1] * p[k] * p[j]);
+    }
+    return dp[i][j];
+  }
+ 
+
+  public static void main (String[] args)
+  {
+ 
+    int arr[] = { 1, 2, 3, 4 };
+    int n= arr.length;
+ 
+    for (int[] row : dp)
+      Arrays.fill(row, -1);
+ 
+    System.out.println("Minimum number of multiplications is " + matrixChainMemoised(arr,1,n-1);
+  }
+}
+
+**********************************************************************
+
+
+static int MatrixChainOrder(int p[], int n)
+{
+ 
+    int [][]dp=new int[n][n];
+
+    for (int i=1; i<n; i++)
+        dp[i][i] = 0;
+
+    for (int L=1; L<n-1; L++)
+    for (int i=1; i<n-L; i++)    
+        dp[i][i+L] = Math.min(dp[i+1][i+L] + p[i-1]*p[i]*p[i+L],
+                    dp[i][i+L-1] + p[i-1]*p[i+L-1]*p[i+L]);    
+     
+    return dp[1][n-1];
 }

@@ -3,6 +3,10 @@ https://leetcode.com/problems/shortest-common-supersequence/
 // Shortest Common Supersequence
 
 
+--> if length is asked simple LCM , ans--> s1 length + s2 length-(dp[n][m])
+
+
+// here we need to print that string not the length
 
 class Solution {
     public String shortestCommonSupersequence(String s1, String s2) {

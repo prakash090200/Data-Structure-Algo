@@ -2,6 +2,31 @@ https://leetcode.com/problems/longest-duplicate-substring/
 
 ///Longest Duplicate Substring
 
+----> count
+
+class Solution
+{
+    public int LongestRepeatingSubsequence(String text)
+    {
+        int s1=text.length();
+        int s2=text.length();
+        // s1=s2
+        
+        int dp[][]=new int[s1+1][s2+1];
+        for(int i=1;i<s1+1;i++)
+        for(int j=1;j<s2+1;j++){
+            if(text.charAt(i-1)==text.charAt(j-1) && i!=j)
+                dp[i][j]=1+dp[i-1][j-1];
+            else 
+                dp[i][j]=Math.max(dp[i][j-1],dp[i-1][j]);
+        }
+        return dp[s1][s2];
+    }
+}
+
+******************************************************************* 
+--> print the string 
+
 
 class Solution {
     public String longestDupSubstring(String S) {
