@@ -1,7 +1,7 @@
- 
+ https://www.geeksforgeeks.org/find-common-elements-three-sorted-arrays/
+
 //Find common elements in three sorted arrays
 
-https://www.geeksforgeeks.org/find-common-elements-three-sorted-arrays/
 
 void findCommon(int ar1[], int ar2[], int ar3[])
     {
