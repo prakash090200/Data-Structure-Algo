@@ -1,5 +1,5 @@
 
-https://leetcode.com/submissions/detail/457279538/
+https://leetcode.com/problems/distribute-candies/submissions/
 
 class Solution {
     public int distributeCandies(int[] candyType) {

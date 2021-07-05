@@ -1,4 +1,4 @@
-/*package whatever //do not write package name here */
+https://practice.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1
 
 // Chocolate Distribution Problem
 // sliding window
@@ -27,4 +27,20 @@ class GFG {
 		    System.out.println(res);
 		}
 	}
+}
+
+*****************
+class Solution
+{
+    public long findMinDiff (ArrayList<Long> a, long n, long m)
+    {
+        long res=Long.MAX_VALUE;
+         Collections.sort(a);
+         for(int i=0;i<=(a.size()-m);i++){
+             res=Math.min(res,a.get(i+(int)m-1)-a.get(i));
+         }
+         return res;
+         
+         
+    }
 }

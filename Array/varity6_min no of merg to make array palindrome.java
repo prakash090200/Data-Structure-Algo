@@ -13,16 +13,13 @@ static int findMinOps(int[] arr, int n)
                 i++;
                 j--;
             }
- 
-         
-            else if (arr[i] > arr[j])
+        else if (arr[i] > arr[j])
             {
             
                 j--;
                 arr[j] += arr[j+1] ;
                 ans++;
             }
- 
  
             else
             {

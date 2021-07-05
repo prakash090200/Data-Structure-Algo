@@ -1,12 +1,21 @@
-class Solution {
-    public int maxSubArray(int[] nums) {
+https://practice.geeksforgeeks.org/problems/kadanes-algorithm-1587115620/1#
+
+///  Kadane's Algorithm
+
+class Solution{
+
+    int maxSubarraySum(int nums[], int n){
+        
         int max_so_far=nums[0];
         int maxx=nums[0];
-        for(int i=1;i<nums.length;i++){
-            max_so_far=Math.max(nums[i],max_so_far+nums[i]);
-            if(max_so_far>maxx)
-                maxx=max_so_far;
+        for(int i=1;i<n;i++){
+            max_so_far+=nums[i];
+            max_so_far=Math.max(nums[i],max_so_far);
+            maxx=Math.max(max_so_far,maxx);
         }
     return maxx;
+        
     }
+    
 }
+

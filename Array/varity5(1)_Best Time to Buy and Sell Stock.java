@@ -12,8 +12,7 @@ class Solution {
         for(int i=0;i<prices.length;i++){
         if(prices[i]<min)
             min=prices[i];
-        else if(prices[i]-min>maxvalue)
-            maxvalue=prices[i]-min;
+            maxvalue=Math.max(maxvalue,prices[i]-min);
             
         
         }
@@ -21,7 +20,7 @@ class Solution {
     }
 }
 
-
+***************************************************
 OR
 
 class Solution {
@@ -32,7 +31,7 @@ class Solution {
         
         for(int i=0;i<prices.length;i++){
         min=Math.max(min,-prices[i]);
-            maxvalue=Math.max(maxvalue,min+prices[i]);
+        maxvalue=Math.max(maxvalue,min+prices[i]);
             
         
         }
