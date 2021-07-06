@@ -1,5 +1,10 @@
 https://leetcode.com/problems/longest-consecutive-sequence/
 
+
+https://www.youtube.com/watch?v=qgizvmgeyUM&ab_channel=takeUforward
+
+
+// best**
 time:o(n)
 space:o(n)
 

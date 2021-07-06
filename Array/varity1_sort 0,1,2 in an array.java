@@ -11,7 +11,7 @@ App 3:
 ***********************************
 int l=0;
 int m=0;
-int h=arr.length()-1;
+int h=arr.length-1;
 
 while(m<=h){
 

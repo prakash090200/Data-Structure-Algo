@@ -5,7 +5,7 @@ https://leetcode.com/problems/permutations/
 class Solution {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
-        backtracking(nums, result, new ArrayList<>()); //approach 1
+        backtracking(nums, result, new ArrayList<>()); 
         return result;                
 
 

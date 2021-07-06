@@ -12,13 +12,13 @@ class Solution {
         int high=arr.length-1;
         int left=0;
         int right=0;
-        int res=0;
+        int sum=0;
         while(low<high){
             if(arr[low]<arr[high]){
                 if(arr[low]>left)
                     left=arr[low];
                 else
-                    res+=left-arr[low];
+                    sum+=left-arr[low];
         
                 low++;
             }
@@ -26,11 +26,11 @@ class Solution {
                 if(arr[high]>right)
                     right=arr[high];
                 else
-                    res+=right-arr[high];
+                sum+=right-arr[high];
                 high--;
             }
         }
-        return res;
+        return sum;
     }
 }
 
