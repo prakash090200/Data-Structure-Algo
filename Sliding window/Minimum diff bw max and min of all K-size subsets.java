@@ -2,6 +2,8 @@ https://www.geeksforgeeks.org/minimum-difference-max-min-k-size-subsets/
 
 /////or chocolate distribution problem
 
+// catogory 2
+
 complexity- o(nlogn)
 
 static int minDifferenceAmongMaxMin(int arr[], 

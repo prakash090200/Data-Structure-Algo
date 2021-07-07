@@ -4,7 +4,7 @@
 
 ***************************
 
-/// Count distinct elements in every window (hashmap)
+/// catogory 1
 
 class Solution
 {
@@ -26,10 +26,7 @@ class Solution
        
     }
    void add(HashMap<Integer,Integer> h,int g){
-        if(h.containsKey(g))
-        h.put(g,h.get(g)+1);
-        else
-        h.put(g,1);
+        h.put(g,h.getOrDefault(g,0)+1);
     }
     void delete(HashMap<Integer,Integer> h,int g){
         if(h.get(g)==1)
@@ -38,4 +35,3 @@ class Solution
         h.put(g,h.get(g)-1);
     }
 }
-

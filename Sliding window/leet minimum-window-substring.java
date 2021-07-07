@@ -1,8 +1,11 @@
+https://leetcode.com/problems/minimum-window-substring/
+
 ////// minimum-window-substring
 
+/// catogory 3
 
 class Solution {
-    public String minWindow(String s, String t) {
+    public String minWindow(String s, String t){
         int[] count = new int[128];
 
         
@@ -12,38 +15,35 @@ class Solution {
       
         String windowString = "";
         
-        int windowLeft = 0, windowRight = 0, charsFoundInWindow = 0,
-         minWindowLen = Integer.MAX_VALUE;
+        int wl = 0, charsFoundInWindow = 0,
+         minLen = Integer.MAX_VALUE;
         
         
-        while (windowRight < s.length()) {
+       for(int wr=0;wr<s.length();wr++){
             
-            count[s.charAt(windowRight)]--;
+            count[s.charAt(wr)]--;
             
-            
-            if (count[s.charAt(windowRight)] >= 0) {
+            if (count[s.charAt(wr)] >=0) 
                 charsFoundInWindow++;
-            }
+            
 
         
             while (charsFoundInWindow == t.length()) {
-                int currentWindowLen = windowRight - windowLeft + 1;
-                if(minWindowLen > currentWindowLen) {
-                    minWindowLen = currentWindowLen;
-                    windowString = s.substring(windowLeft, windowRight + 1);
-                }
+                int currentLen = wr+1 - wl ;
+                if(minLen > currentLen){
+                    minLen = currentLen;
+                    windowString = s.substring(wl, wr + 1);
+                    }
                 
-                count[s.charAt(windowLeft)]++;
+                  count[s.charAt(wl)]++;
                 
-                
-                
-                if (count[s.charAt(windowLeft)] > 0) {
+                if (count[s.charAt(wl)] >0) 
                     charsFoundInWindow--;
-                }
-                windowLeft++;
+                
+
+                wl++;
             }
-            
-            windowRight++;  
+ 
         }
         
         return windowString;

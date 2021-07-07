@@ -1,5 +1,8 @@
-///// permutation-in-string leet
+https://leetcode.com/problems/permutation-in-string/
 
+
+///// permutation-in-string leet
+// catogory 1
 
 class Solution {
     public boolean checkInclusion(String s1, String s2) {

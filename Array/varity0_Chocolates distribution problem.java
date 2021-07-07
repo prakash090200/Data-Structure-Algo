@@ -29,7 +29,7 @@ class GFG {
 	}
 }
 
-*****************
+**************************************
 class Solution
 {
     public long findMinDiff (ArrayList<Long> a, long n, long m)

@@ -3,36 +3,32 @@ https://practice.geeksforgeeks.org/problems/minimum-swaps-required-to-bring-all-
 /// Minimum swaps and K together
 
 //sliding window approach
+//catogory 1
 
 class Complete{
  public static int minSwap (int arr[], int n, int k) {
         int good=0;
         int bad=0;
         
-        for(int i=0;i<n;i++)
+        for(int i=0;i<n;i++)   
         if(arr[i]<=k)
-        good++;
-        
+        good++;           // window size
+      
         for(int i=0;i<good;i++)
         if(arr[i]>k)
         bad++;
-        
+
         int ans=bad;
-        int i=0;
         int j=good;
         
-        while(j<n){
-            if(arr[i]>k)
-            bad--;
-            if(arr[j]>k)
-            bad++;
-            ans=Math.min(bad,ans);
-            i++;
-            j++;
-        }
-       
-       return ans;
-    }
-    
-    
+       for(int i=0;i<(n-good);i++){
+           if(arr[i]>k)
+           bad--;
+           if(arr[j++]>k)
+           bad++;
+           ans=Math.min(ans,bad);
+           
+       }  
+     return ans;
+    }  
 }

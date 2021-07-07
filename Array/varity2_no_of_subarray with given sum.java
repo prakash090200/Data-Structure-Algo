@@ -25,17 +25,17 @@ public class Solution {
 public class Solution {
     public int subarraySum(int[] nums, int k) {
         int count=0;
-        int cursum=0;
+        int sum=0;
         HashMap<Integer,Integer> h=new HashMap<>();
         
     for(int i=0;i<nums.length;i++){
-        cursum+=nums[i];
-        if(cursum==k)
+        sum+=nums[i];
+        if(sum==k)
             count++;
-        if(h.containsKey(cursum-k))
-            count+=h.get(cursum-k);
+        if(h.containsKey(sum-k))
+            count+=h.get(sum-k);
 
-        h.put(cursum,h.getOrDefault(cursum,0)+1);
+        h.put(cursum,h.getOrDefault(sum,0)+1);
        }
         return count;
     }

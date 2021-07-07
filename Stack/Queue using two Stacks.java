@@ -1,3 +1,5 @@
+https://practice.geeksforgeeks.org/problems/queue-using-two-stacks/1#
+
 //// Queue using two Stacks 
 
 class StackQueue
@@ -15,11 +17,11 @@ class StackQueue
     
     int Pop()
     {   int val=-1;
-        while(s1.size()>1){
+        while(!s1.empty()){
             s2.push(s1.pop());
         }
-        if(!s1.isEmpty())
-         val=s1.pop();
+        if(!s2.isEmpty())
+         val=s2.pop();
         while(!s2.isEmpty()){
             s1.push(s2.pop());
         }

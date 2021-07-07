@@ -2,7 +2,7 @@ https://leetcode.com/problems/grumpy-bookstore-owner/submissions/
 
 //Grumpy Bookstore Owner
 // sliding window
-
+// catogry 3
 class Solution {
     public int maxSatisfied(int[] customers, int[] grumpy, int X) {
         

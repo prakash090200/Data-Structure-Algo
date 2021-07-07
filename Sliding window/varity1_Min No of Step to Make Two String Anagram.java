@@ -2,7 +2,6 @@ https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagra
 
 // Minimum Number of Steps to Make Two Strings Anagram
 
-
 class Solution {
     public int minSteps(String s, String t) {
         int len = s.length();
@@ -10,12 +9,12 @@ class Solution {
         int[] countS = new int[26];
         int[] countT = new int[26];
         for(int i=0;i<len;i++) {
-            countS[(int)(s.charAt(i) - 'a')]++;
-            countT[(int)(t.charAt(i) - 'a')]++;
+            countS[s.charAt(i) - 'a']++;
+            countT[t.charAt(i) - 'a']++;
         }
         
         for(int i=0;i<26;i++) {
-            if(countS[i]-countT[i] > 0) {
+            if(countS[i]-countT[i] >=0) {
                 count += (countS[i] - countT[i]);
             } 
         }

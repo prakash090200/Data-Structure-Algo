@@ -3,6 +3,8 @@ https://practice.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1
 // Chocolate Distribution Problem
 // sliding window
 
+// catogry 2
+
 import java.util.*;
 import java.lang.*;
 import java.io.*;
