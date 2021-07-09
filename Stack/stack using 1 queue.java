@@ -1,43 +1,37 @@
-
 https://leetcode.com/problems/implement-stack-using-queues/submissions/
 
 
-/// Stack using two queues
+//Implement Stack using Queues
+
 class MyStack {
 
    private Queue<Integer> q1;
-private Queue<Integer> q2;
+
 private int top;
     public MyStack() {
         q1 = new LinkedList<>();
-        q2 = new LinkedList<>();
-        top=-1;
+        top =-1;
     }
     
     /** Push element x onto stack. */
     public void push(int x) {
         q1.add(x);
-        top = x;
+    
+    int sz = q1.size();
+    while (sz > 1) {
+        q1.add(q1.remove());
+        sz--;
+    }
     }
     
     /** Removes the element on top of the stack and returns that element. */
     public int pop() {
-         while (q1.size() > 1) {
-             top=q1.poll();
-             q2.add(top);
-    }
-        
-    int ans=q1.remove();
-   while(!q2.isEmpty())
-       q1.add(q2.poll());
-        
-        
-        return ans;
+        return q1.remove();
     }
     
     /** Get the top element. */
     public int top() {
-        return top;
+        return q1.peek();
     }
     
     /** Returns whether the stack is empty. */

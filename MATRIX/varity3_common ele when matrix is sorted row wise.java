@@ -2,6 +2,26 @@ https://www.geeksforgeeks.org/find-common-element-rows-row-wise-sorted-matrix/
 
 ///// Find a common element in all rows of a given row-wise sorted matrix
 
+1st approach 
+o(n*m*m) -> n - no of rows
+m= no of column 
+and for linear search another m
+
+*************************************
+2ns approach 
+o(n*m*log(m))
+binary search 
+
+***************************************
+3rd
+using hashing
+o(n*m)
+
+|
+V
+
+Time :o(n*m) 
+space :o(1)
 
 class GFG
 {
@@ -21,8 +41,7 @@ HashMap<Integer,Integer> cnt = new HashMap<>();
         
         if(cnt.containsKey(mat[i][0]))
         {
-            cnt.put(mat[i][0],
-            cnt.get(mat[i][0]) + 1);
+            cnt.put(mat[i][0],cnt.get(mat[i][0]) + 1);
         }
         else
         {
@@ -34,11 +53,10 @@ HashMap<Integer,Integer> cnt = new HashMap<>();
         {
  
 
-            if (mat[i][j] != mat[i][j - 1])
+            if (mat[i][j] != mat[i][j - 1]){
                 if(cnt.containsKey(mat[i][j]))
                 {
-                    cnt.put(mat[i][j],
-                    cnt.get(mat[i][j]) + 1);
+                    cnt.put(mat[i][j],cnt.get(mat[i][j]) + 1);
                 }
                 else
                 {

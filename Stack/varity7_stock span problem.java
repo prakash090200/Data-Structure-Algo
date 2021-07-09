@@ -9,10 +9,9 @@ class Solution{
     {
        Stack<Integer> s=new Stack<>();
        int ans[]=new int[n];
-       ans[0]=1;
-       s.push(0);
-       for(int i=1;i<n;i++){
-           while(!s.isEmpty() && price[s.peek()] <=price[i])
+       
+       for(int i=0;i<n;i++){
+           while(!s.isEmpty() && price[i] >=price[s.peek()] )
            s.pop();
            
            ans[i]=(s.isEmpty())?(i+1):(i-s.peek());
@@ -33,11 +32,10 @@ public static int[] calculateSpan(int price[], int n)
     {
         int [] ans=new int[n];
         Stack<int[]> s=new Stack<>();
-        ans[0]=1;
-        s.push(new int[]{price[0],0});
         
-        for(int i=1;i<n;i++){
-            while(!s.isEmpty() && s.peek()[0]<=price[i])
+        
+        for(int i=0;i<n;i++){
+            while(!s.isEmpty() && price[i]>=s.peek()[0])
             s.pop();
             ans[i]=(s.isEmpty())?i+1:i-s.peek()[1];
             s.push(new int[]{price[i],i});
@@ -64,7 +62,7 @@ class StockSpanner {
 
         int span = 1;
 
-        while(!stack.isEmpty() && stack.peek()[0] <= price){
+        while(!stack.isEmpty() && price>=stack.peek()[0]){
             span += stack.pop()[1];
         }
  

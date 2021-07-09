@@ -5,6 +5,27 @@ https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/pra
 
 ///Smallest number on left
 
+//Best*****
+class Solution{
+    static List<Integer> leftSmaller(int n, int a[])
+    {   
+        Stack<Integer> s=new Stack<>();
+       
+        Integer ans[]=new Integer[a.length];
+        Arrays.fill(ans,-1);
+        for(int i=a.length-1;i>=0;i--){
+            while(!s.empty() && a[i]<a[s.peek()])
+               ans[s.pop()]=a[i];
+               
+               s.push(i);
+        }
+        
+        List<Integer> l=Arrays.asList(ans);
+        return l;
+    }
+}
+
+*************************************************************
 class Solution{
     static List<Integer> leftSmaller(int n, int a[])
     {

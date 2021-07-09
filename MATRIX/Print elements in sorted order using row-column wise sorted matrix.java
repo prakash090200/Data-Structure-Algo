@@ -3,6 +3,17 @@ https://www.geeksforgeeks.org/print-elements-sorted-order-row-column-wise-sorted
 
 ///Print elements in sorted order using row-column wise sorted matrix
 
+Approach 1:
+sorting
+
+o(n2 log(n2))
+******************************************
+
+Approach 2: o(n2)
+
+o(n3)
+
+*******************************************
 
 class GFG
 {
@@ -13,10 +24,8 @@ class GFG
     static void youngify(int mat[][], int i, int j)
     {
         
-        int downVal = (i + 1 < N) ?
-                    mat[i + 1][j] : INF;
-        int rightVal = (j + 1 < N) ?
-                     mat[i][j + 1] : INF;
+        int downVal = (i + 1 < N) ? mat[i + 1][j] : INF;
+        int rightVal = (j + 1 < N) ?mat[i][j + 1] : INF;
  
         if (downVal == INF && rightVal == INF)
         {

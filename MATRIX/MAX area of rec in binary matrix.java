@@ -7,9 +7,10 @@ class Solution {
     public int maximalRectangle(char[][] matrix) {
              int n=matrix.length;
         
-        int m=(n!=0)?matrix[0].length:0;
+       int m=(n!=0)?matrix[0].length:0;
         int []add=new int[m];
         int max=0;
+        
         for(int i=0;i<n;i++){
             for(int j=0;j<matrix[i].length;j++){
                 if((int)(matrix[i][j]-'0')==0)
@@ -24,43 +25,36 @@ class Solution {
         }
         return max;
     }
-     public int largestRectangleArea(int[] heights) {
+    public int largestRectangleArea(int[] heights) {
         int []right=gright(heights);
         int []left=gleft(heights);
         int maxx=Integer.MIN_VALUE;
         for(int i=0;i<heights.length;i++){
-            maxx=(int)Math.max(heights[i]*(right[i]-left[i]-1),maxx);
+            maxx=Math.max(heights[i]*(right[i]-left[i]-1),maxx);
         }
         return maxx;
     }
     public static int []  gright(int [] arr){
-        int n=arr.length;
-        int []right=new int[n];
-        Stack<int[]> s=new Stack<>();
-        right[n-1]=n;
-        s.push(new int[]{arr[n-1],n-1});
-        for(int i=n-2;i>=0;i--){
-        while(!s.isEmpty() && s.peek()[0]>=arr[i])
-            s.pop();
-         right[i]=(s.isEmpty())?n:s.peek()[1];
-            s.push(new int[]{arr[i],i});
+       Stack<Integer> s=new Stack<>();
+        int [] r=new int[arr.length];
+          Arrays.fill(r,arr.length);
+        for(int i=0;i<arr.length;i++){
+        while(!s.isEmpty() && arr[i]<arr[s.peek()])
+            r[s.pop()]=i;
+            s.push(i);
             }
-        
-        return right;
+        return r;
     }
     public static int []  gleft(int [] arr){
-        int n=arr.length;
-        int []left=new int[n];
-        Stack<int[]> s=new Stack<>();
-        s.push(new int[]{arr[0],0});
-        left[0]=-1;
-        for(int i=1;i<n;i++){
-        while(!s.isEmpty() && s.peek()[0]>=arr[i])
-            s.pop();
-         left[i]=(s.isEmpty())?-1:s.peek()[1];
-            s.push(new int[]{arr[i],i});
+         Stack<Integer> s=new Stack<>();
+      
+        int [] l=new int[arr.length];
+          Arrays.fill(l,-1);
+        for(int i=arr.length-1;i>=0;i--){
+        while(!s.isEmpty() && arr[i]<arr[s.peek()])
+            l[s.pop()]=i;
+            s.push(i);
             }
-          
-        return left;
+        return l;
     }
 }

@@ -3,7 +3,18 @@ https://www.geeksforgeeks.org/common-elements-in-all-rows-of-a-given-matrix/
 
 //Common elements in all rows of a given matrix
 
+Approach 1:
 
+o(m*n*log(n))  sorting the 2d array 
+ + o(m*n) apply hashmap on sorted array and get common element
+
+overall time: o(m*n*log(n)) 
+
+*********************************************************************
+
+Approach 2:
+O(m*n)
+--> single traversal of array
  
 static void printCommonElements(int mat[][])
 {

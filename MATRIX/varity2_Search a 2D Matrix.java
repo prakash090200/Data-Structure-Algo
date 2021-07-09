@@ -3,21 +3,17 @@ https://leetcode.com/problems/search-a-2d-matrix/submissions/
 //Search a 2D Matrix
 
 
+BEST**
+
 class Solution {
-    public boolean searchMatrix(int[][] matrix, int target) {
-        int m = matrix.length;
-        int n = matrix[0].length;
-        for(int i = 0 ; i < m ; i++) {
-            if(matrix[i][0] > target) return false;
-            int low = 0;
-            int high  = n - 1;
-            
-            while(low <= high ) {
-                int mid = (high  + low ) / 2;
-                if(matrix[i][mid] == target) return true;
-                if(matrix[i][mid] > target)  high  = mid - 1;
-                if(matrix[i][mid] < target)  low = mid + 1;
-            }
+   public boolean searchMatrix(int[][] matrix, int target) {
+        int i=0;
+        int j=matrix[0].length-1; 
+        
+        while(i <matrix.length && j>=0){
+            if(matrix[i][j]== target) return true;
+            else if(matrix[i][j] > target) j--;
+            else i++;
         }
         return false;
     }

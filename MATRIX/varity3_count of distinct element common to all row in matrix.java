@@ -4,29 +4,34 @@ https://practice.geeksforgeeks.org/problems/find-distinct-elements2054/1#
 ////count of all the distinct elements common to all rows of the matrix
 
 class Solution{
-    static int distinct(int a[][], int n)
+    static int distinct(int mat[][], int n)
     {
-        Set<Integer> hash = new HashSet<Integer>();
-        	for(int k=0; k<n; k++){
-                hash.add(a[0][k]); 
+        Map<Integer,Integer> mp = new HashMap<>();
+        int count=0;
+     
+    // initalize 1st row elements with value 1
+    int N=mat[0].length;
+    int M=mat.length;
+    for (int j = 0; j < N; j++)
+        mp.put(mat[0][j],1);
+         
+    // traverse the matrix
+    for (int i = 1; i < M; i++)
+    {
+        for (int j = 0; j < N; j++)
+        {
+           
+            if (mp.get(mat[i][j]) != null && mp.get(mat[i][j]) == i)
+            {
+                
+                mp.put(mat[i][j], i + 1);
+ 
+                if (i == M - 1)
+                count++;
+                    
             }
-            Set<Integer> hash1 = new HashSet<Integer>(n);
-            Set<Integer> diff = new HashSet<Integer>(n);
-            for(int j=1; j<n; j++){
-                for(int k=0; k<n; k++){
-                    hash1.add(a[j][k]);
-                }
-                for(int e:hash){
-                    if(!hash1.contains(e)){
-                        diff.add(e);
-                    }
-                }
-                hash1.clear();
-                hash.removeAll(diff);
-                diff.clear();
-            }
-            
-            int count = hash.size();
-            return count;
         }
+        }
+        return count;
     }
+}
