@@ -1,0 +1,60 @@
+pre to post:
+https://www.youtube.com/watch?v=CV7jwxSz8cg
+--> right to left.
+-->op1+op2+postfix[i]
+-->1st operator pop-op1
+-->2nd operator opo is op2.
+
+pre to infix:
+--> right to left
+-->'('+op1 +postfix[i]+ op2+')'
+-->1st operator pop-op1
+-->2nd operator opo is op2.
+
+post to pre:
+https://www.youtube.com/watch?v=4GTqpV_dqKY   
+--> left to right 
+-->prefix[i]+op2+op1
+-->1st operator pop-op1
+-->2nd operator opo is op2.
+
+post to infix:
+https://www.youtube.com/watch?v=OKdMY9oYkTg
+-->left to right 
+-->'('+op2 +postfix[i]+ op1+')'
+-->1st operator pop-op1
+-->2nd operator opo is op2.
+
+*******************************************
+
+infix to postfix 
+https://www.youtube.com/watch?v=8wQ7JE5pFXU&t=513s&ab_channel=SimpleSnippets
+
+
+
+infix to prefix using stack
+https://www.youtube.com/watch?v=8QxlrRws9OI&ab_channel=Jenny%27slecturesCS%2FITNET%26JRF
+
+|
+V
+
+input.reverse();
+
+Stack<Character> stack = new Stack<Character>();
+char [] charsExp = new String(input).toCharArray();
+        for (int i = 0; i < charsExp.length; i++) {
+
+            if (charsExp[i] == '(') {
+                charsExp[i] = ')';
+                i++;
+            }
+            else if (charsExp[i] == ')') {
+                charsExp[i] = '(';
+                i++;
+            }
+
+reverse the answer at last
+
+--> same precedence -> associativity -> left to right (+,- ya *,/) -> push  
+--> same precedence -> associativity -> right to left(^) -> pop until   
+

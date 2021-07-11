@@ -34,7 +34,6 @@ class solver
             fast=fast.next.next;
             slow=slow.next;
             if(slow==fast)
-              
             break;
             
         }
@@ -44,7 +43,6 @@ class solver
             while(fast.next!=slow)
             fast=fast.next;
         }
-        
         else{
             while(fast.next!=slow.next){
                 slow=slow.next;
@@ -52,6 +50,6 @@ class solver
             }
         }
         fast.next=null;
-        }
+       } 
     }
 }
