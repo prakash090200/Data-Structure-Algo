@@ -1,3 +1,4 @@
+
 https://leetcode.com/problems/binary-tree-level-order-traversal/
 
 // BEST**
@@ -84,7 +85,7 @@ class answer{
     
 }
 
-****************************************************
+***************************************************************
 /// ITERATIVE METHOD USING QUEUE
 
 Time->O(n)
@@ -95,7 +96,7 @@ class BinaryTree {
 Node root;
 void printLevelOrder()
     {
-        Queue<Node> queue = new LinkedList<Node>();
+        Queue<Node> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty())
         {

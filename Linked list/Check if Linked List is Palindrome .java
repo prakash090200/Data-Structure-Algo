@@ -23,18 +23,14 @@ class Palindrome
 }
 
 *************************************************************
-class Palindrome
-{
-    
-    boolean isPalindrome(Node head) 
-    {
-
- if(head!=null && head.next==null)
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+       if(head!=null && head.next==null)
             return true;
        boolean flag=true;;
-       Node fir=head;
-       Node sec=head;
-      
+       ListNode fir=head;
+       ListNode sec=head;
+       
        while(fir.next!=null && fir.next.next!=null){
            fir=fir.next.next;
           
@@ -42,21 +38,23 @@ class Palindrome
        }
       if(fir!=null)
       sec=sec.next;
-      Node head2=reverse(sec);
+      ListNode head2=reverse(sec);
       while(head!=sec && head2!=null){
-          if(head.data==head2.data){
+          if(head.val==head2.val){
               head=head.next;
               head2=head2.next;
           }
-          else
+          else{
           flag=false;
+              break;
+          }
       }
       return flag;
     }
-    static Node reverse(Node head){
-        Node cur=head;
-        Node prev=null;
-        Node nex=null;
+    static ListNode reverse(ListNode head){
+        ListNode cur=head;
+        ListNode prev=null;
+        ListNode nex=null;
         while(cur!=null){
             nex=cur.next;
             cur.next=prev;
@@ -64,5 +62,6 @@ class Palindrome
             cur=nex;
         }
         return prev;
-    } 
+    }
+
 }

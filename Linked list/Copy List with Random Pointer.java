@@ -1,5 +1,6 @@
 https://leetcode.com/problems/copy-list-with-random-pointer/
 
+https://www.youtube.com/watch?v=VNf6VynfpdM&ab_channel=takeUforward
 
 ////Copy List with Random Pointer
 
@@ -16,10 +17,7 @@ class Solution {
         
         while (curr != null){
             
-            Node next = curr.next;
-            Node random = curr.random;
-            
-            curr.next = new Node(curr.val,next,random);
+            curr.next = new Node(curr.val,curr.next,curr.random);
             
             curr = curr.next.next;
         }
@@ -30,32 +28,30 @@ class Solution {
         
         curr = head;
         while (curr != null){
-            
-            
-            Node next = curr.next;
-            
-            if(next.random != null)
-                next.random=next.random.next;
+         
+            if(curr.next.random != null)
+                curr.next.random=curr.random.next;
             
             curr = curr.next.next;
         }
         
         
         curr = head;
+        
         while (curr != null){
            
-            Node copy = curr.next;
+            Node copy=curr.next;
             curr.next = copy.next;
            
             if(copy.next != null)
-                copy.next=curr.next.next;
+                copy.next=copy.next.next;
+            
             curr = curr.next;
         }
         
         return newHead;
     }
 }
-
 
 **********************************************************8
 
@@ -67,7 +63,7 @@ class Solution {
 class Solution {
     public Node copyRandomList(Node head) {
         
-        Node copy = new Node(-1);
+        Node copy = new Node(0);
         Node node = copy;
         Map<Node, Node> map = new HashMap<>();
         

@@ -19,19 +19,21 @@ class Solution {
         while(a!=null && b!=null){
             if(a.val<b.val){
                 temp.next=a;
-                temp=a;
+                temp=temp.next;
                 a=a.next;
             }
         else{
               temp.next=b;
-                temp=b;  
-            b=b.next;
+              temp=temp.next;  
+              b=b.next;
             }
             
         }
-        if(a!=null) temp.next=a;
+        if(a!=null) 
+          temp.next=a;
         else
-            temp.next=b;
+           temp.next=b;
+
         return res.next;
     }
     public ListNode middle(ListNode m){

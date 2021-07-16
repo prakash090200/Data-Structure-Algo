@@ -15,10 +15,11 @@ static void removeDuplicate(node head)
            
             if (hs.contains(curval)) {
                 prev.next = current.next;
-            } else {
+            } 
+            else {
                 hs.add(curval);
                 prev = current;
-            }
+                 }
             current = current.next;
         }
  

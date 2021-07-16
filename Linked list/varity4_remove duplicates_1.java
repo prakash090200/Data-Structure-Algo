@@ -15,3 +15,22 @@ class Solution {
     return head;
 }
 }
+**************************************
+class Solution {
+   public ListNode deleteDuplicates(ListNode head) {
+    ListNode cur= head;
+       ListNode prev=null;
+       HashSet<Integer> h=new HashSet<>();
+    while(cur!=null){
+        int value=cur.val;
+        if(h.contains(value))
+            prev.next=cur.next;
+        else{
+            h.add(cur.val);
+            prev=cur;
+        }
+        cur=cur.next;
+   }
+    return head;
+}
+}

@@ -2,7 +2,70 @@ https://leetcode.com/problems/rotate-list/submissions/
 https://practice.geeksforgeeks.org/problems/rotate-a-linked-list/1
 
 
-/// rotate the linked list
+
+// anticlock wise
+
+class Solution {
+    public ListNode rotateRight(ListNode head, int k) {
+        if(head==null || head.next==null) return head;
+        
+        ListNode tail=head;
+        int length=0;
+        
+        while(tail.next!=null){
+            length++;
+            tail=tail.next;
+        }
+        length++;
+        
+        tail.next=head;
+        int rotate=length-(k%length);
+        
+        tail=head;
+        while(rotate-->1){
+            tail=tail.next;
+        }
+        head=tail.next;
+        tail.next=null;
+        
+        return head;
+    }
+}
+
+*********************************************************
+
+// clockwise
+
+class Solution{
+    
+    public Node rotate(Node head, int k) {
+      if(head==null || head.next==null) return head;
+        
+        Node tail=head;
+        int length=0;
+        
+        while(tail.next!=null){
+            length++;
+            tail=tail.next;
+        }
+        length++;
+        
+        tail.next=head;
+        int rotate=k;
+        
+        tail=head;
+        while(rotate-->1){
+            tail=tail.next;
+        }
+        head=tail.next;
+        tail.next=null;
+        
+        return head;
+    }        
+}
+
+**********************************************************
+/// rotate the linked list clockwise .
 
 class Rotate{
     
@@ -28,6 +91,8 @@ class Rotate{
 ***************************************************
 or
 // best
+
+// Anticlock wise
 
 class Solution {
     public ListNode rotateRight(ListNode head, int k) {
@@ -57,3 +122,5 @@ class Solution {
         
     }
 }
+
+********************************************************

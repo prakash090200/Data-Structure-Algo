@@ -57,16 +57,17 @@ class GfG
         while(a!=null && b!=null){
             if(a.data<b.data){
                 temp.bottom=a;
-                temp=a;
+                temp=temp.next;
                 a=a.bottom;
             }
             else{
                 temp.bottom=b;
-                temp=b;
+                temp=temp.next;
                 b=b.bottom;
             }
         }
-        if(a!=null) temp.bottom=a;
+        if(a!=null) 
+        temp.bottom=a;
         else
         temp.bottom=b;
         

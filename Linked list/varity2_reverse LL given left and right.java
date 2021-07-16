@@ -9,12 +9,12 @@ class Solution {
         ListNode lastNode = null;
         
         if(m == 1)
-            return reverseLinkList(head,n-m);
+            return reverseLinkList(head,n+1-m);
         
         while(current!=null){
             count ++;
             if(count == m){
-                lastNode.next = reverseLinkList(current,n-m);
+                lastNode.next = reverseLinkList(current,n+1-m);
             }
             lastNode = current;
             current = current.next;
@@ -24,9 +24,9 @@ class Solution {
     
     public ListNode reverseLinkList(ListNode head,int n){
         
-        n=n+1;
-        ListNode prev=null,
-        next=null;
+        
+        ListNode prev=null;
+        ListNode next=null;
         ListNode current = head;
         
         int count = 0;

@@ -46,3 +46,10 @@ Node reverseUtil(Node curr, Node prev)
         reverseUtil(next1, curr);
         return head;
     }
+
+
+
+
+
+
+

@@ -20,11 +20,9 @@ public class Solution {
     }
 }
 
-****************************************************
-class Intersect
-{
-	int intersectPoint(Node headA, Node headB)
-	{
+*************************************************************************
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         int c1=len(headA);
         int c2=len(headB);
         int d=0;
@@ -40,21 +38,23 @@ class Intersect
         }
         while(headA!=null && headB!=null){
             if(headA==headB)
-            return headA.data;
+            return headA;
             headA=headA.next;
             headB=headB.next;
         }
-        return -1;
+        return null;
          
          
          
 	}
-	static int len(Node a){
-	    int count=1;
+	static int len(ListNode a){
+	    int count=0;
 	    while(a!=null){
 	        count++;
 	        a=a.next;
 	    }
 	    return count;
 	}
+        
+    
 }

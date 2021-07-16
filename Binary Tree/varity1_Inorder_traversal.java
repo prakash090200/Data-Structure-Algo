@@ -94,12 +94,11 @@ SPACE :  O(1) *****
 
 //MORRIS INORDER TRAVERSAL ALGO space: O(1) **
 
-class Solution
-{
+class Solution {
     ArrayList<Integer> a=new ArrayList<>();
-    ArrayList<Integer> inOrder(Node root)
-    {
-        Node current, pre;
+    public List<Integer> inorderTraversal(TreeNode root) {
+   
+        TreeNode current, pre;
  
         if (root == null)
             return a;
@@ -109,14 +108,13 @@ class Solution
         {
             if (current.left == null)
             {
-                a.add(current.data);
+                a.add(current.val);
                 current = current.right;
             }
             else {
                 
                 pre = current.left;
-                while (pre.right != null
-                       && pre.right != current)
+                while (pre.right != null && pre.right != current)
                     pre = pre.right;
  
           
@@ -129,7 +127,7 @@ class Solution
                 else
                 {
                     pre.right = null;
-                    a.add(current.data);
+                    a.add(current.val);
                     current = current.right;
                 } 
  
