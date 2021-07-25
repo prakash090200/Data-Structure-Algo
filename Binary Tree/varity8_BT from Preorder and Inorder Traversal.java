@@ -15,13 +15,10 @@ SPACE : O(N)
 
 
 class Solution {
-    HashMap<Integer,Integer> map;
-    int preIndex;
+    HashMap<Integer,Integer> map=new HashMap<>();
+    int preIndex=0;
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         
-    
-        preIndex = 0;
-        map = new HashMap<>();
         for(int i = 0 ; i<inorder.length ; i++){
             map.put(inorder[i],i);
         }

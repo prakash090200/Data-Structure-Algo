@@ -4,40 +4,40 @@ https://practice.geeksforgeeks.org/problems/duplicate-subtree-in-binary-tree/1#
 //Duplicate subtree in Binary Tree
 
 class Solution {
-
-    int dupSub(Node root) {
-       List<Node> result = new ArrayList<>();
+        int ans=0;
         Map<Integer, Integer> map = new HashMap<>();
-        findDuplicates(root, result, map);
+    int dupSub(Node root) {
+      
+        findDuplicates(root);
         
-       return (result.size()>0)?1:0;
+       return ans;
     }
    
  
-    public StringBuilder findDuplicates(Node root, List<Node> list, Map<Integer, Integer> map) {
+    public StringBuilder findDuplicates(Node root) {
         
-       if (root == null) return new StringBuilder();
+       if (root == null) 
+       return new StringBuilder();
         
-       StringBuilder key = findDuplicates(root.left, list, map).
-            append(".").append(findDuplicates(root.right, list, map)).
+        StringBuilder key = findDuplicates(root.left).
+            append(".").append(findDuplicates(root.right)).
             append(".").append(root.data);
         
        int hash = key.toString().hashCode();
-       int count=(map.get(hash)!=null)?map.get(hash):1;
-        
-            
-        if (count == 2) {
-           if(root.left!=null && root.right!=null)
-            list.add(root);
-        }
-
-        map.put(hash, count + 1);
+       
+       
+     if(map.containsKey(hash)){
+         if(root.left!=null && root.right!=null)
+         ans=1;
+     }
+       else 
+       map.put(hash,1);
+     
         
         return key;
     }
 
     
-}
 *******************************************************************
 
 class Solution {

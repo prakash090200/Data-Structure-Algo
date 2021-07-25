@@ -2,10 +2,9 @@ https://practice.geeksforgeeks.org/problems/kth-ancestor-in-a-tree/1
 
 ///Kth Ancestor in a Tree
 
-
 class Tree
 {
-    public int kthAncestor(Node root, int k, int node_val)
+    public int kthAncestor(Node root, int k, int node)
     {
         int ancestors[] = new int[10000 + 1];
  
@@ -15,9 +14,9 @@ class Tree
    
     int count = 0;
  
-    while (node_val!=-1)
+    while (node!=-1)
     {
-        node_val = ancestors[node_val];
+        node = ancestors[node];
         count++;
  
         if(count==k)
@@ -25,11 +24,11 @@ class Tree
     }
  
   
-    return node_val;
+    return node;
     }
     
-    static void generateArray(Node root, int ancestors[])
-{
+    
+    static void generateArray(Node root, int ancestors[]){
     
     ancestors[root.data] = -1;
  
@@ -39,8 +38,8 @@ class Tree
  
     while(!q.isEmpty())
     {
-        Node temp = q.peek();
-        q.remove();
+        Node temp = q.remove();
+        
  
         if (temp.left != null)
         {
@@ -56,6 +55,47 @@ class Tree
     }
 }
 }
+************************************************************
+class Tree
+{  
+    int k;
+    int ans=0;
+    public int kthAncestor(Node root, int t, int node)
+    {
+        k=t;
+        Node parent = check(root,node);
+    if (parent != null)
+        ans=-1;
+        
+        return ans;
+    
+    }
+    
+    public Node check(Node root,int node ){
+    
+    if (root == null)
+        return null;
+     
+    if (root.data == node||
+    (check(root.left, node)) != null ||
+    (check(root.right,node)) != null)
+    {
+            if (k > 0)    
+                k--;
+             
+            else if (k == 0)
+            {
+                ans=root.data;
+                return null;
+            }
+            
+            return root;
+     }
+    return null;
+  }
+}
+
+**************************************************************
 
 
 ***************************************************************************
@@ -64,35 +104,30 @@ https://leetcode.com/problems/kth-ancestor-of-a-tree-node/submissions/
 /// LEETCODE
 
 
+best***
 class TreeAncestor {
-    int[] parent;
-    int[] height;
+    int[][] dp ;
     public TreeAncestor(int n, int[] parent) {
-        this.parent = parent;
-        this.height = new int[n];
-        for(int i =1; i<parent.length; ++i) {
-            fillHeight(i);
+        int log = (int)((Math.log(n)/Math.log(2)) + 1); 
+        dp = new int[n][log];
+        for(int i = 0;i<n;i++){
+            dp[i][0] = parent[i];
+        }
+        for(int k = 1;k<log;k++){
+            for(int i = 0;i<n;i++){
+                if(dp[i][k-1] == -1)
+                    dp[i][k] = -1;
+                else 
+                    dp[i][k] = dp[dp[i][k-1]][k-1]; 
+            }
         }
     }
     
     public int getKthAncestor(int node, int k) {
-        if(height[node] < k) return -1;
-        int count = 0;
- 
-    while (node!=-1)
-    {
-        node = parent[node];
-        count++;
- 
-        if(count==k)
-            break;
-    }
-        return node;
-    }
-    
-    private int fillHeight(int node) {
-        if ((node == 0) || (height[node]!=0)) return height[node];
-        height[node] = fillHeight(parent[node]) + 1;
-        return height[node];
+		
+        if(node == -1) return -1;
+        int step = (int)(Math.log(k) / Math.log(2)); 
+        if((1<<step) == k) return dp[node][step]; 
+        return getKthAncestor(dp[node][step],k - (1<<step)); 
     }
 }

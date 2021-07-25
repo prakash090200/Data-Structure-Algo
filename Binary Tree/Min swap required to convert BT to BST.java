@@ -1,60 +1,75 @@
-https://tutorialspoint.dev/data-structure/binary-tree-data-structure/minimum-swap-required-convert-binary-tree-binary-search-tree
+https://www.codingninjas.com/codestudio/problems/minimum-swaps-to-convert-binary-tree-into-bst_1118109?leftPanelTab=1
+
+https://www.geeksforgeeks.org/minimum-swap-required-convert-binary-tree-binary-search-tree/
 
 //Minimum swap required to convert binary tree to binary search tree
 
+import java.util.ArrayList;
+import javafx.util.Pair;
+import java.util.Collections;
+import java.util.Comparator;
 
-#include<bits/stdc++.h> 
-using namespace std; 
-  
-// Inorder Traversal of Binary Tree 
-void inorder(int a[], std::vector<int> &v,  
-                        int n, int index) 
-{ 
-    // if index is greater or equal to vector size 
-    if(index >= n) 
-        return; 
-    inorder(a, v, n, 2 * index + 1); 
-      
-    // push elements in vector 
-    v.push_back(a[index]); 
-    inorder(a, v, n, 2 * index + 2); 
-} 
-  
-// Function to find minimum swaps to sort an array 
-int minSwaps(std::vector<int> &v) 
-{ 
-    std::vector<pair<int,int> > t(v.size()); 
-    int ans = 0; 
-    for(int i = 0; i < v.size(); i++) 
-        t[i].first = v[i], t[i].second = i; 
-      
-    sort(t.begin(), t.end()); 
-    for(int i = 0; i < t.size(); i++) 
-    { 
-        // second element is equal to i 
-        if(i == t[i].second) 
-            continue; 
-        else
-        { 
-            // swaping of elements 
-            swap(t[i].first, t[t[i].second].first); 
-            swap(t[i].second, t[t[i].second].second); 
-        } 
-          
-        // Second is not equal to i 
-        if(i != t[i].second) 
-            --i; 
-        ans++; 
-    } 
-    return ans; 
-} 
-  
-// Driver code 
-int main() 
-{ 
-    int a[] = { 5, 6, 7, 8, 9, 10, 11 }; 
-    int n = sizeof(a) / sizeof(a[0]); 
-    std::vector<int> v; 
-    inorder(a, v, n, 0); 
-    cout << minSwaps(v) << endl; 
-} 
+class Sortbyroll implements Comparator<Pair<Integer, Integer>> {
+
+    public int compare(Pair<Integer, Integer> a, Pair<Integer, Integer> b) {
+        return a.getKey() - b.getKey();
+    }
+};
+
+public class Solution {
+
+    public static void inorderTraversal(ArrayList<Integer> arr, ArrayList<Integer> inorder, int n, int idx) {
+
+        // Base case.
+        if (idx >= n) {
+            return;
+        }
+
+        inorderTraversal(arr, inorder, n, 2 * idx + 1);
+        inorder.add(arr.get(idx));
+        inorderTraversal(arr, inorder, n, 2 * idx + 2);
+
+    }
+
+    public static void swap(ArrayList<Pair<Integer, Integer>> toSwap, int i, int j) {
+
+        Pair<Integer, Integer> a = toSwap.get(i);
+        toSwap.set(i, toSwap.get(j));
+        toSwap.set(j, a);
+
+    }
+
+    public static int minimumSwaps(ArrayList<Integer> arr, int n) {
+        // Finding the inorder.
+        ArrayList<Integer> inorder = new ArrayList<>();
+
+        inorderTraversal(arr, inorder, n, 0);
+        int ans = 0;
+        ArrayList<Pair<Integer, Integer>> toSwap = new ArrayList<Pair<Integer, Integer>>();
+
+        for (int i = 0; i < n; i++) {
+            toSwap.add(new Pair<Integer, Integer>(inorder.get(i), i));
+        }
+
+        Collections.sort(toSwap, new Sortbyroll());
+
+        for (int i = 0; i < n; i++) {
+            if (i == toSwap.get(i).getValue()) {
+                continue;
+            }
+
+            else {
+                swap(toSwap, i, toSwap.get(i).getValue());
+            }
+
+            if (toSwap.get(i).getValue() != i) {
+                --i;
+            }
+            ans++;
+        }
+
+        return ans;
+
+    }
+
+}

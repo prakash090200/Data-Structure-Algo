@@ -3,37 +3,35 @@ https://leetcode.com/problems/find-duplicate-subtrees/submissions/
 // Find Duplicate Subtrees NODES
 
 class Solution {
-    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
-        List<TreeNode> result = new ArrayList<>();
+    List<TreeNode> result = new ArrayList<>();
         Map<Integer, Integer> map = new HashMap<>();
-        findDuplicates(root, result, map);
+    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+        
+        findDuplicates(root);
         return result;
     }
     
-    private StringBuilder findDuplicates(TreeNode root, List<TreeNode> list, 
-                                  Map<Integer, Integer> map) {
+    private StringBuilder findDuplicates(TreeNode root) {
         
-       if (root == null) return new StringBuilder();
+       if (root == null)
+           return new StringBuilder();
         
-       StringBuilder key = findDuplicates(root.left, list, map).
-            append(".").append(findDuplicates(root.right, list, map)).
+       StringBuilder key = findDuplicates(root.left).
+            append(".").append(findDuplicates(root.right)).
             append(".").append(root.val);
         
        int hash = key.toString().hashCode();
-       int count=(map.get(hash)!=null)?map.get(hash):1;
         
-            
-        if (count == 2) {
-
-            list.add(root);
-        }
-
-        map.put(hash, count + 1);
+       if(map.containsKey(hash)){
+           if(map.get(hash)==1)
+           result.add(root);
+           
+       }
+       map.put(hash,map.getOrDefault(hash,0)+1);
         
         return key;
     }
 }
-
 
 
 *****************************************************************
