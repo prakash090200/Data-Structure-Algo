@@ -19,7 +19,7 @@ class Solution {
         retVal.get(level).add(root.val); 
         levelOrderAux(root.left,level+1);
         levelOrderAux(root.right,level+1);
-        return;
+        
     }
 }
 

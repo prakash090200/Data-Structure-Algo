@@ -5,6 +5,7 @@ https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1
 TIME:  O(N)
 SPACE: O(N)
 
+
 BEST**
 
 class Solution {
@@ -24,8 +25,10 @@ class Solution {
         if(tree.right!=null) fun(tree.right,depth+1); 
         
     }
-}
-**********************************
+
+************************************************************
+
+
 class Tree
 {
     ArrayList<Integer> leftView(Node root)
@@ -43,6 +46,7 @@ class Tree
       }
       if(temp.right!=null)
         a.addAll(leftView(temp.right));
+
       return a;
     }
     
