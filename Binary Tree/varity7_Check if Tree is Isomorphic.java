@@ -3,7 +3,28 @@ https://practice.geeksforgeeks.org/problems/check-if-tree-is-isomorphic/1
 ///Check if Tree is Isomorphic
 
 TIME:  O(min(m,n))
-
+class Solution  
+{ 
+   
+    boolean isIsomorphic(Node a, Node b)  
+    { 
+          if (a == null && b == null)
+            return true;
+             
+       
+        if (a != null && b != null)
+            return ((a.data == b.data
+                    && isIsomorphic(a.left, b.left)
+                    && isIsomorphic(a.right, b.right)) || (a.data == b.data
+                    && isIsomorphic(a.left, b.right)
+                    && isIsomorphic(a.right, b.left)));
+  
+   
+        return false;
+    }
+    
+}    
+********************************************************
 class Solution  
 { 
     boolean flag;
