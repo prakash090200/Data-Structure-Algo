@@ -4,10 +4,10 @@ https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-t
 https://www.youtube.com/watch?v=uI77Ij5Kiic&t=186s&ab_channel=GateSmashers
 https://www.youtube.com/watch?v=s5XRtcud35E&ab_channel=Jenny%27slecturesCS%2FITNET%26JRF
 
-*********************
+***************************************
 Time: O(N2)  -> WITHOUT USING HASHMAP(NEED EXTRA O(n) for searching in array)
 https://www.geeksforgeeks.org/construct-a-binary-tree-from-postorder-and-inorder/
-***********************
+***************************************
 
 TIME: O(N) --> USING HASPMAP(reduce time for searching)
 SPACE : O(N)
