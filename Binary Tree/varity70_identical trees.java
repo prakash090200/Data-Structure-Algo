@@ -7,13 +7,14 @@ class GfG
             return true;
              
        
-        if (a != null && b != null)
+        if (a == null || b == null)
+        return false; 
             return (a.data == b.data
                     && identical(a.left, b.left)
                     && identical(a.right, b.right));
   
    
-        return false;
+       
     }
   
 }
