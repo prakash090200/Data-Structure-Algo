@@ -3,6 +3,8 @@ https://practice.geeksforgeeks.org/problems/bfs-traversal-of-graph/1#
 time: o(n+e)
 space: o(n)+o(n)+o(n+e)
 
+//BFS
+
 class Solution
 {
     Function to return Breadth First Traversal of given graph.
