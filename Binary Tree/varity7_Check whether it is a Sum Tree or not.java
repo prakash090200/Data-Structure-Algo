@@ -19,11 +19,8 @@ class Solution
         rs = sum(node.right);
        
        
-        if((node.data == ls + rs) && isSumTree(node.left)==true && isSumTree(node.right)==true)
-        {
-            return true;
-        }
-        return false;    
+return ((node.data == ls + rs) && isSumTree(node.left)==true && isSumTree(node.right)==true);
+            
 	}
 
 

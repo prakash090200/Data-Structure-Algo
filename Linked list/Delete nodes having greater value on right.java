@@ -9,7 +9,7 @@ class Solution
     {
         Node rev=reverse(head);
         Node curr=rev,maxNode=rev;
-        while(curr!=null&&curr.next!=null){
+        while(curr!=null && curr.next!=null){
             if(curr.next.data<maxNode.data)
             curr.next=curr.next.next;
             else{

@@ -56,10 +56,11 @@ class Solution {
         int k=0;
         cur=head;
         ListNode prev=null;
-        while(k++<count &&cur!=null){
+        while(k++<count && cur!=null){
             prev=cur;
             cur=cur.next;
         }
+
         if(cur.next==null){
             if(prev==null)
                 head=head.next;

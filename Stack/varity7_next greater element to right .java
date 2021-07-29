@@ -11,7 +11,7 @@ Approach 2: O(n)
 // best***
 class Solution
 {
-    //Function to find the next greater element for each element of the array.
+    
     public static long[] nextLargerElement(long[] arr, int n)
     { 
         Stack<Integer> s=new Stack<>();
