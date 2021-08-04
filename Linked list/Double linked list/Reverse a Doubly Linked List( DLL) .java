@@ -7,9 +7,11 @@ public static Node reverseDLL(Node  head)
     Node cur=head;
     Node temp=null;
     while(cur!=null){
+
         temp=cur.prev;
         cur.prev=cur.next;
         cur.next=temp;
+
         cur=cur.prev;
         
     }
