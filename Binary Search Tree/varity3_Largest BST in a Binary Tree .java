@@ -3,6 +3,44 @@ https://practice.geeksforgeeks.org/problems/largest-bst/1
 //Largest BST in a Binary Tree 
 
 
+O(N 2)
+o(n)
+
+
+class Solution{
+    
+   
+    static int largestBst(Node root)
+    {
+        if(root==null)return 0;
+        
+        if(bst(root,1,Integer.MAX_VALUE)) return size(root);
+        
+        return Math.max(largestBst(root.left),largestBst(root.right));
+        
+        
+    }
+    public static boolean bst(Node root,int min,int max){
+         if(root==null) return true;
+         
+         if(root.data<min || root.data>max)
+         return false;
+         
+         return (bst(root.left,min,root.data-1) && bst(root.right,root.data+1,max));
+    }
+    public static int size(Node root){
+        if(root==null) return 0;
+        
+        return(size(root.left)+1+size(root.right));
+    }
+    
+}
+
+******************************************************************************************
+
+O(N)
+O(N)
+
 
 class Solution{
   static int MAX = Integer.MAX_VALUE;

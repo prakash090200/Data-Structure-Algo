@@ -17,12 +17,12 @@ class Solution {
             st.push(i);
         }
        
-        for(int i=0; st.empty()==false && i<nums.length; i++)
+        for(int i=0;i<nums.length; i++)
         {
-            if(nums[i] > nums[st.peek()])
+            while(st.size()>0 && nums[i] > nums[st.peek()])
             {
                 ans[st.pop()]=nums[i];
-                i--;
+                
             }
             
         }
@@ -31,4 +31,4 @@ class Solution {
         return ans;
         
     }
-}}
+}

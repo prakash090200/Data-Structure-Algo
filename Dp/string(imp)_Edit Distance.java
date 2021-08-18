@@ -20,9 +20,7 @@ class Solution {
             Math.min(minDist[i-1][j], minDist[i][j-1]),
             minDist[i-1][j-1]) + 1;
         } else {
-          minDist[i][j] = Math.min(
-            Math.min(minDist[i-1][j]+1, minDist[i][j-1])+1,
-            minDist[i-1][j-1]);
+          minDist[i][j] = minDist[i-1][j-1];
         }
       }
     }

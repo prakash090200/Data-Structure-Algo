@@ -23,18 +23,19 @@ class Complete{
 }
 
 *****************************************************************
-class Complete{
 public static int[] Smallestonleft (int arr[], int n) {
-
-        TreeSet<Integer> t=new TreeSet<>();
-        int [] res=new int[n];
-         int j=0;
-        for(int i=0;i<n;i++){
-            t.add(arr[i]);
-            res[j++]=(t.lower(arr[i])==null)?-1:t.lower(arr[i]);
-            
-            }
-          return res;
-        
+          
+          TreeSet<Integer> h=new TreeSet<>();
+          int a[]=new int[n];
+          Arrays.fill(a,-1);
+          for(int i=0;i<n;i++){
+              
+              h.add(arr[i]);
+              if(h.lower(arr[i])!=null)
+                  a[i]=h.lower(arr[i]);
+              
+                
           }
+          return a;
     }
+    

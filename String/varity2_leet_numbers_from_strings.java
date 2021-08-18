@@ -1,44 +1,27 @@
-Example:
-Let the string be: Java23Dev56hlp4bufh
-The numbers are not supposed to be treated as individual digits like 2, 3, 5, etc..
-Rather the numbers in the string are: 23, 56 and 4
-Hence the total is 23 + 56 + 4 = 83.
+https://practice.geeksforgeeks.org/problems/sum-of-numbers-in-string-1587115621/1
 
 
-
-
-Solution:
-*****************************************************
-class sum
+class Solution
 {
-  public static void main(String[]args)
-  {
-    Scanner scan = new Scanner(System.in);
-    System.out.print("Enter the string: ");
-    String str = scan.next();
-    int j = 0, z = 10;
-    int [] arr = new int [str.length()];
     
-    for(int i = 0; i < str.length(); i++)
-    {
-      if(str.charAt(i) >= 48 && str.charAt(i) <= 57)
-      {
-        arr[j] = str.charAt(i) - 48;
-        while(i + 1 < str.length() && str.charAt(i + 1) >= 48 && str.charAt( i + 1) <= 57)
-        {
-          arr[j] = z * arr[j] + str.charAt(i + 1) - 48;
-          i = i + 1;
-          
+    public static long findSum(String str)
+    {   
+        long sum=0;
+        String s="0"; 
+        int n=str.length();
+        char c='\0';
+        for(int i=0;i<n;i++){
+            c=str.charAt(i);
+            if(Character.isDigit(c))
+                s+=c;
+            
+            else{
+                sum+=Long.parseLong(s);
+                s="0";
+            }
+            
         }
-        j = j + 1;
-        z = 10;
-      }
+        return  sum+Long.parseLong(s);
     }
-    int total = 0;
-    for(int i = 0; i < arr.length; i++)
-    {
-      total = total + arr[i];
-    }
-    System.out.println("The sum is: "+total);
-  }
+    
 }

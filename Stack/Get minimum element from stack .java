@@ -20,7 +20,7 @@ class GfG
 	return minEle;
     }
     
-    /*returns poped element from stack*/
+    
     int pop()
     {  
         int ans=-1;
@@ -39,7 +39,7 @@ class GfG
 	   return ans;
     }
 
-    /*push element x into the stack*/
+  
     void push(int x)
     {
 	if(s.isEmpty()){

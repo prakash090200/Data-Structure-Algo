@@ -5,7 +5,7 @@ https://www.youtube.com/watch?v=PAceaOSnxQs&ab_channel=Jenny%27slecturesCS%2FITN
 
 //Infix to Postfix
 
-i) prededence
+i) precedence
 ii) associativity
 
 class Solution

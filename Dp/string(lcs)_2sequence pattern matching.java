@@ -2,6 +2,9 @@ https://leetcode.com/problems/is-subsequence/
 
 //392. Is Subsequence
 
+o(n)
+o(1)
+
 class Solution {
     public boolean isSubsequence(String text1, String text2) {
          int m=text1.length();
@@ -19,6 +22,9 @@ class Solution {
 }
   
 ********************************************************************
+o(n2)
+o(n2)
+
 class Solution {
     public boolean isSubsequence(String text1, String text2) {
         int s1=text1.length();

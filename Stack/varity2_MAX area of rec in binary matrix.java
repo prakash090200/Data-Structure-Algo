@@ -17,7 +17,7 @@ class Solution {
                     add[j]=0;
                     
                 else
-                add[j]=add[j]+(int)(matrix[i][j]-'0');
+                add[j]=add[j]+(matrix[i][j]-'0');
             }
             
            max=Math.max(largestRectangleArea(add),max);  

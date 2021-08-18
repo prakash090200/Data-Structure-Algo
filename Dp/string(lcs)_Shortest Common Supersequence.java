@@ -3,7 +3,8 @@ https://leetcode.com/problems/shortest-common-supersequence/
 // Shortest Common Supersequence
 
 
---> if length is asked simple LCM , ans--> s1 length + s2 length-(dp[n][m])
+--> if length is asked simple LCM , 
+ans--> s1 length + s2 length-(dp[n][m])
 
 
 // here we need to print that string not the length
@@ -33,8 +34,7 @@ class Solution {
                 i--;
                 j--;
             }    
-            else {
-                if( dp[i][j] == dp[i-1][j]  ){
+            else if( dp[i][j] == dp[i-1][j]  ){
                     sb.append(s1.charAt(i-1));
                     i--;
                 }

@@ -1,5 +1,7 @@
 https://leetcode.com/problems/longest-duplicate-substring/
 
+https://practice.geeksforgeeks.org/problems/longest-repeating-subsequence2004/1
+
 ///Longest Duplicate Substring
 
 ----> count
@@ -23,6 +25,35 @@ class Solution
         return dp[s1][s2];
     }
 }
+
+******************************************************
+//PRINTING the longest duplicate SUBSEQUENCE
+
+StringBuffer sb=new StringBuffer();
+ 
+    
+    int i = n, j = n;
+    while (i > 0 && j > 0)
+    {
+        
+        if (dp[i][j] == dp[i - 1][j - 1] + 1)
+        {
+        res = sb.append(charAt(i - 1));
+        i--;
+        j--;
+        }
+ 
+        
+        else if (dp[i][j] == dp[i - 1][j])
+            i--;
+        else
+            j--;
+    }
+
+return sb.reverse().toString();
+ 
+
+
 
 ******************************************************************* 
 --> print the string 

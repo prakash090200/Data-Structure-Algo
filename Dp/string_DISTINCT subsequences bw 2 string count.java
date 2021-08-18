@@ -7,13 +7,14 @@ public int numDistinct(String A, String B)
     {
         if(A.length() < B.length())
             return 0;
-
-        int[][] dp = new int[A.length() + 1][B.length() + 1];
+         int n1=A.length();
+         int n2=B.length();
+        int[][] dp = new int[n1 + 1][n2 + 1];
 		
-	 // Base cases
+	 
 		 
-		dp[0][0] = 1;
-        for(int i = 1; i <= A.length(); i++)
+		
+        for(int i = 0; i <= A.length(); i++)
             dp[i][0] = 1;
 
        
@@ -29,5 +30,5 @@ public int numDistinct(String A, String B)
             }
         }
 
-        return dp[A.length()][B.length()];
+        return dp[n1][n2];
     }
